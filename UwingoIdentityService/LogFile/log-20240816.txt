@@ -1,0 +1,100 @@
+2024-08-16 11:19:26.607 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-16 11:19:26.861 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-16 11:19:26.862 +03:00 [INF] Hosting environment: Development
+2024-08-16 11:19:26.862 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-08-16 11:19:26.906 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/swagger/index.html - -
+2024-08-16 11:19:27.747 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/_vs/browserLink - -
+2024-08-16 11:19:27.747 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/_framework/aspnetcore-browser-refresh.js - -
+2024-08-16 11:19:27.749 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/swagger/index.html - - - 200 - text/html;charset=utf-8 844.2162ms
+2024-08-16 11:19:27.755 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/_framework/aspnetcore-browser-refresh.js - - - 200 13778 application/javascript;+charset=utf-8 4.8263ms
+2024-08-16 11:19:27.810 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 62.8792ms
+2024-08-16 11:19:27.870 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/swagger/v1/swagger.json - -
+2024-08-16 11:19:28.031 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 161.1425ms
+2024-08-16 11:19:47.908 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:19:47.950 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:19:47.973 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:19:49.399 +03:00 [INF] Executed DbCommand (20ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:19:49.419 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:19:49.424 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:19:49.440 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 1462.9548ms
+2024-08-16 11:19:49.440 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:19:49.447 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 1538.8225ms
+2024-08-16 11:20:53.688 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:20:53.694 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:20:53.695 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:20:53.756 +03:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:20:53.757 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:20:53.758 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:20:53.759 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 63.825ms
+2024-08-16 11:20:53.759 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:20:53.759 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 70.9680ms
+2024-08-16 11:22:26.232 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:22:26.238 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:22:26.238 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:22:26.260 +03:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:22:26.260 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:22:26.260 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:22:26.261 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 23.0223ms
+2024-08-16 11:22:26.261 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:22:26.261 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 31.4709ms
+2024-08-16 11:33:27.360 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:33:27.361 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:33:27.361 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:33:27.372 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:33:27.372 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:33:27.372 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:33:27.373 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 11.9947ms
+2024-08-16 11:33:27.373 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:33:27.373 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 13.3395ms
+2024-08-16 11:34:26.360 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:34:26.361 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:34:26.361 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:34:26.365 +03:00 [INF] Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:34:26.365 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:34:26.365 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:34:26.366 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 4.9468ms
+2024-08-16 11:34:26.366 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:34:26.366 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 6.1236ms
+2024-08-16 11:36:01.915 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:36:01.916 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:36:01.916 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:36:01.939 +03:00 [INF] Executed DbCommand (21ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:36:01.940 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:36:01.940 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:36:01.941 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 25.3393ms
+2024-08-16 11:36:01.941 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:36:01.941 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 26.3088ms
+2024-08-16 11:39:25.881 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:39:25.881 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:39:25.881 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:39:25.887 +03:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:39:25.887 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:39:25.887 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:39:25.888 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 6.4199ms
+2024-08-16 11:39:25.888 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:39:25.888 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 7.2899ms
+2024-08-16 11:41:11.768 +03:00 [INF] Request starting HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - -
+2024-08-16 11:41:11.773 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:41:11.773 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-08-16 11:41:11.775 +03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[DbConnection], [a].[Name]
+FROM [Applications] AS [a]
+2024-08-16 11:41:11.778 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-08-16 11:41:11.806 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-08-16 11:41:11.807 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 33.7146ms
+2024-08-16 11:41:11.807 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-08-16 11:41:11.807 +03:00 [INF] Request finished HTTP/1.1 GET https://localhost:44314/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 38.6265ms

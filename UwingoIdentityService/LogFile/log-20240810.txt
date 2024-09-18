@@ -1,0 +1,10 @@
+2024-08-10 10:19:05.312 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-08-10 10:19:05.577 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-08-10 10:19:05.577 +03:00 [INF] Hosting environment: Development
+2024-08-10 10:19:05.578 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-08-10 10:19:05.631 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/swagger/index.html - -
+2024-08-10 10:19:05.796 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/swagger/index.html - - - 200 - text/html;charset=utf-8 167.0759ms
+2024-08-10 10:19:05.829 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/_framework/aspnetcore-browser-refresh.js - -
+2024-08-10 10:19:05.835 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/_framework/aspnetcore-browser-refresh.js - - - 200 13778 application/javascript;+charset=utf-8 3.3457ms
+2024-08-10 10:19:05.889 +03:00 [INF] Request starting HTTP/2 GET https://localhost:44314/swagger/v1/swagger.json - -
+2024-08-10 10:19:06.034 +03:00 [INF] Request finished HTTP/2 GET https://localhost:44314/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 142.5670ms
