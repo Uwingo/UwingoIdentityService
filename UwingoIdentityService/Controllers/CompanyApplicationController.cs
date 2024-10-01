@@ -1,4 +1,5 @@
-﻿using Entity.ModelsDto;
+﻿using Entity.Models;
+using Entity.ModelsDto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -16,12 +17,14 @@ namespace Presentation.Controllers
     {
         private readonly ICompanyApplicationService _companyApplicationService;
         private readonly IApplicationService _applicationService;
+        private readonly IAuthenticationService _authenticationService;
         private readonly ILogger<CompanyApplicationController> _logger;
 
-        public CompanyApplicationController(ICompanyApplicationService companyApplicationService, IApplicationService applicationService, ILogger<CompanyApplicationController> logger)
+        public CompanyApplicationController(ICompanyApplicationService companyApplicationService, IAuthenticationService authenticationService, IApplicationService applicationService, ILogger<CompanyApplicationController> logger)
         {
             _companyApplicationService = companyApplicationService;
             _applicationService = applicationService;
+            _authenticationService = authenticationService;
             _logger = logger;
         }
 
@@ -201,6 +204,25 @@ namespace Presentation.Controllers
                 // Hata durumunda loglama ve 500 hatası dönme
                 return StatusCode(500, $"Uygulamalar getirilirken bir hata oluştu: {ex.Message}");
             }
+        }
+
+        [HttpGet("GetCompanyApplicationIdByUserName/{userName}")]
+        public async Task<IActionResult> GetCompanyApplicationIdByUserName(string userName)
+        {
+            User user = await _authenticationService.GetUserByUserName(userName);
+            Guid caId = user.CompanyApplicationId;
+
+            return Ok(caId);
+        }
+
+        [HttpGet("GetCompanyApplicationsByUserName/{userName}")]
+        public async Task<IActionResult> GetCompanyApplicationsByUserName(string userName)
+        {
+            User user = await _authenticationService.GetUserByUserName(userName);
+            var usersCompanyId = _companyApplicationService.GetAllCompanyApplications().Where(ca => ca.Id == user.CompanyApplicationId).FirstOrDefault().CompanyId;
+            var companyApplications = _companyApplicationService.GetApplicationsByCompanyId(usersCompanyId);
+
+            return Ok(companyApplications);
         }
     }
 }

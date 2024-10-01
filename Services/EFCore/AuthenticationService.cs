@@ -81,7 +81,9 @@ namespace Services.EFCore
             {
                 _user = await _userManager.FindByNameAsync(userLoginDto.UserName);
                 var result = _user != null && await _userManager.CheckPasswordAsync(_user, userLoginDto.Password);
-                Guid applicationId = _user.ApplicationId;
+                Guid companyApplicationId = _user.CompanyApplicationId;
+
+                Guid applicationId = _repo.CompanyApplication.GetCompanyApplication(companyApplicationId, false).ApplicationId;
 
                 string dbString = _repo.Application.GetApplication(applicationId, false).DbConnection;
                 _dbContextFactory.CreateDbContext(dbString);
@@ -269,9 +271,9 @@ namespace Services.EFCore
         }
 
 
-        public async Task<IEnumerable<User>> GetAllUsersByApplicationId(Guid applicationId)
+        public async Task<IEnumerable<User>> GetAllUsersByApplicationId(Guid companyApplicationId)
         {
-            return _userManager.Users.Where(u => u.ApplicationId == applicationId);
+            return _userManager.Users.Where(u => u.CompanyApplicationId == companyApplicationId);
 
         }
 
@@ -412,9 +414,9 @@ namespace Services.EFCore
 
             return usersDto;
         }
-        public List<UserDto> GetPaginatedApplicationUsers(RequestParameters parameters, bool trackChanges, Guid applicationId)
+        public List<UserDto> GetPaginatedApplicationUsers(RequestParameters parameters, bool trackChanges, Guid companyApplicationId)
         {
-            var users = _repo.User.GetPagedUsers(parameters, trackChanges).Where(u=> u.ApplicationId == applicationId);
+            var users = _repo.User.GetPagedUsers(parameters, trackChanges).Where(u=> u.CompanyApplicationId == companyApplicationId);
             var usersDto = _mapper.Map<List<UserDto>>(users);
 
             return usersDto;

@@ -111,7 +111,7 @@ namespace API.Controllers
             try
             {
                 var user = await _authService.GetUserByUserName(username);
-                if (user != null) return Ok(user.ApplicationId);
+                if (user != null) return Ok(user.CompanyApplicationId);
                 else return NotFound("Kullanıcı bulunamadı.");
 
             }

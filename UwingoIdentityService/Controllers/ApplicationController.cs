@@ -186,25 +186,36 @@ namespace UwingoIdentityService.Controllers
             }
         }
 
-        [HttpGet("GetApplicationByUserName")]
+        [HttpGet("GetApplicationByUserName/{userName}")]
         public async Task<IActionResult> GetApplicationByUserName(string userName)
         {
-            List<ApplicationDto> applications = new List<ApplicationDto>();
-            var user = await _authenticationService.GetUserByUserName(userName);
-
-            //var tenantId = user.
-
-            var company = _companyService.GetAllCompanies().Where(c => c.TenantId == tenantId).FirstOrDefault();
-            var companyApplications = _companyApplicationService.GetApplicationsByCompanyId(company.Id);
-
-            foreach (var ca in companyApplications)
+            try
             {
-                var application = _applicationService.GetAllApplication().Where(c => c.Id == ca.ApplicationId).FirstOrDefault();
-                applications.Add(application);
-            }
+                List<ApplicationDto> applications = new List<ApplicationDto>();
+                var user = await _authenticationService.GetUserByUserName(userName);
 
-            if (applications.Any()) return Ok(applications);
-            else return BadRequest();
+                var caId = user.CompanyApplicationId;
+
+                Guid companyId = _companyApplicationService.GetCompanyApplication(caId).CompanyId;
+
+                var company = _companyService.GetAllCompanies().Where(c => c.Id == companyId).FirstOrDefault();
+                var companyApplications = _companyApplicationService.GetApplicationsByCompanyId(company.Id);
+
+                foreach (var ca in companyApplications)
+                {
+                    var application = _applicationService.GetAllApplication().Where(c => c.Id == ca.ApplicationId).FirstOrDefault();
+                    applications.Add(application);
+                }
+                _logger.LogInformation("Kullanıcı adıyla şirketin tüm uygulamaları çekildi");
+                if (applications.Any()) return Ok(applications);
+                else return BadRequest();
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Kullanıcı adıyla şirketin tüm uygulamaları çekilirken bir hata oluştu: {Message}", ex.Message);
+                return StatusCode(500, "Internal server error");
+            }
+            
         }
     }
 }

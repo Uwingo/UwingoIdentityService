@@ -14,7 +14,6 @@ namespace Entity.ModelsDto
         public string UserName { get; set; }
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
-        //public Guid TenantId { get; set; }
-        public Guid ApplicationId { get; set; }
+        public Guid CompanyApplicationId { get; set; }
     }
 }
