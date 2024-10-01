@@ -32,8 +32,9 @@ namespace Services.EFCore
         private User _user;
         private readonly IRepositoryManager _repo;
         private readonly IEmailService _emailService;
+        private readonly IDbContextFactory _dbContextFactory;
 
-        public AuthenticationService(UserManager<User> userManager, RoleManager<Role> roleManager, IMapper mapper, IConfiguration configuration, ILogger<AuthenticationService> logger, IRepositoryManager repo, IEmailService emailService)
+        public AuthenticationService(UserManager<User> userManager, RoleManager<Role> roleManager, IDbContextFactory dbContextFactory, IMapper mapper, IConfiguration configuration, ILogger<AuthenticationService> logger, IRepositoryManager repo, IEmailService emailService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -42,6 +43,7 @@ namespace Services.EFCore
             _logger = logger;
             _repo = repo;
             _emailService = emailService;
+            _dbContextFactory = dbContextFactory;
         }
 
         public async Task<IdentityResult> RegisterUser(UserRegistrationDto userRegistrationDto)
@@ -79,7 +81,13 @@ namespace Services.EFCore
             {
                 _user = await _userManager.FindByNameAsync(userLoginDto.UserName);
                 var result = _user != null && await _userManager.CheckPasswordAsync(_user, userLoginDto.Password);
+                Guid applicationId = _user.ApplicationId;
 
+                string dbString = _repo.Application.GetApplication(applicationId, false).DbConnection;
+                _dbContextFactory.CreateDbContext(dbString);
+
+                var data = _repo.Application.GenericRead(false);
+                
                 if (!result)
                 {
                     _logger.LogError("Kullanıcı doğrulama başarısız.");

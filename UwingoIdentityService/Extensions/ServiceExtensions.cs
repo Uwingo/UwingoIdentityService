@@ -65,6 +65,8 @@ namespace UwingoIdentityService.Extensions
             services.AddScoped<IRepositoryTenant, RepositoryTenant>();
             services.AddScoped<IRepositoryUserRole, RepositoryUserRole>();
             services.AddScoped<IRepositoryBase<User>, RepositoryBase<User>>();
+
+            services.AddScoped<IDbContextFactory, DbContextFactory>();
         }
 
         public static void ConfigureServiceManager(this IServiceCollection services)

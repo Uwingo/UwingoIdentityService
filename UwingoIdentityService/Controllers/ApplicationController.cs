@@ -16,11 +16,17 @@ namespace UwingoIdentityService.Controllers
     public class ApplicationController : ControllerBase
     {
         private readonly IApplicationService _applicationService;
+        private readonly ICompanyApplicationService _companyApplicationService;
+        private readonly IAuthenticationService _authenticationService;
+        private readonly ICompanyService _companyService;
         private readonly ILogger<ApplicationController> _logger;
 
-        public ApplicationController(IApplicationService applicationService, ILogger<ApplicationController> logger)
+        public ApplicationController(IApplicationService applicationService, IAuthenticationService authenticationService, ICompanyApplicationService companyApplicationService, ICompanyService companyService, ILogger<ApplicationController> logger)
         {
             _applicationService = applicationService;
+            _companyApplicationService = companyApplicationService;
+            _authenticationService = authenticationService;
+            _companyService = companyService;
             _logger = logger;
         }
 
@@ -178,6 +184,27 @@ namespace UwingoIdentityService.Controllers
                 _logger.LogError("Uygulama sayısı çekilirken bir hata oluştu: {Message}", ex.Message);
                 return StatusCode(500, "Internal server error");
             }
+        }
+
+        [HttpGet("GetApplicationByUserName")]
+        public async Task<IActionResult> GetApplicationByUserName(string userName)
+        {
+            List<ApplicationDto> applications = new List<ApplicationDto>();
+            var user = await _authenticationService.GetUserByUserName(userName);
+
+            //var tenantId = user.
+
+            var company = _companyService.GetAllCompanies().Where(c => c.TenantId == tenantId).FirstOrDefault();
+            var companyApplications = _companyApplicationService.GetApplicationsByCompanyId(company.Id);
+
+            foreach (var ca in companyApplications)
+            {
+                var application = _applicationService.GetAllApplication().Where(c => c.Id == ca.ApplicationId).FirstOrDefault();
+                applications.Add(application);
+            }
+
+            if (applications.Any()) return Ok(applications);
+            else return BadRequest();
         }
     }
 }

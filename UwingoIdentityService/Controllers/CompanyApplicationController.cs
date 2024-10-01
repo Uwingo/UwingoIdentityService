@@ -15,11 +15,13 @@ namespace Presentation.Controllers
     public class CompanyApplicationController : ControllerBase
     {
         private readonly ICompanyApplicationService _companyApplicationService;
+        private readonly IApplicationService _applicationService;
         private readonly ILogger<CompanyApplicationController> _logger;
 
-        public CompanyApplicationController(ICompanyApplicationService companyApplicationService, ILogger<CompanyApplicationController> logger)
+        public CompanyApplicationController(ICompanyApplicationService companyApplicationService, IApplicationService applicationService, ILogger<CompanyApplicationController> logger)
         {
             _companyApplicationService = companyApplicationService;
+            _applicationService = applicationService;
             _logger = logger;
         }
 
@@ -113,7 +115,7 @@ namespace Presentation.Controllers
         [Authorize(Policy = "EditCompanyApplication")]
         [HttpPut("UpdateCompanyApplication")]
         public async Task<IActionResult> UpdateCompanyApplication([FromBody] CompanyApplicationDto companyApplication)
-       {
+        {
             try
             {
                 if (companyApplication == null)
@@ -173,6 +175,31 @@ namespace Presentation.Controllers
             {
                 _logger.LogError("Şirket uygulaması sayısı çekilirken bir hata oluştu: {Message}", ex.Message);
                 return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("GetApplicationsByCompanyId/{companyId}")]
+        public IActionResult GetApplicationsByCompanyId(Guid companyId)
+        {
+            try
+            {
+                // CompanyId'ye ait tüm uygulamaları çek
+                var companyApplications = _companyApplicationService.GetApplicationsByCompanyId(companyId);
+                List<ApplicationDto> applications = new List<ApplicationDto>();
+
+                foreach (var ca in companyApplications)
+                {
+                    var application = _applicationService.GetByIdApplication(ca.ApplicationId);
+                    applications.Add(application);
+                }
+
+                if (applications == null || !applications.Any()) return NotFound("Bu şirkete ait aktif uygulama bulunamadı.");          
+                return Ok(applications);
+            }
+            catch (Exception ex)
+            {
+                // Hata durumunda loglama ve 500 hatası dönme
+                return StatusCode(500, $"Uygulamalar getirilirken bir hata oluştu: {ex.Message}");
             }
         }
     }
