@@ -6,19 +6,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using RapositoryAppClient;
 using Repositories;
 using Repositories.Contracts;
 using Services.Contracts;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Net.Mail;
-using System.Net;
 using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
-using System.Threading.Tasks;
-using Microsoft.Extensions.Options;
 
 namespace Services.EFCore
 {
@@ -32,9 +27,8 @@ namespace Services.EFCore
         private User _user;
         private readonly IRepositoryManager _repo;
         private readonly IEmailService _emailService;
-        private readonly IDbContextFactory _dbContextFactory;
 
-        public AuthenticationService(UserManager<User> userManager, RoleManager<Role> roleManager, IDbContextFactory dbContextFactory, IMapper mapper, IConfiguration configuration, ILogger<AuthenticationService> logger, IRepositoryManager repo, IEmailService emailService)
+        public AuthenticationService(UserManager<User> userManager, RoleManager<Role> roleManager,IMapper mapper, IConfiguration configuration, ILogger<AuthenticationService> logger, IRepositoryManager repo, IEmailService emailService)
         {
             _userManager = userManager;
             _roleManager = roleManager;
@@ -43,7 +37,6 @@ namespace Services.EFCore
             _logger = logger;
             _repo = repo;
             _emailService = emailService;
-            _dbContextFactory = dbContextFactory;
         }
 
         public async Task<IdentityResult> RegisterUser(UserRegistrationDto userRegistrationDto)
@@ -79,18 +72,29 @@ namespace Services.EFCore
         {
             try
             {
+                // Kullanıcıyı bul
                 _user = await _userManager.FindByNameAsync(userLoginDto.UserName);
                 var result = _user != null && await _userManager.CheckPasswordAsync(_user, userLoginDto.Password);
-                Guid companyApplicationId = _user.CompanyApplicationId;
 
-                Guid applicationId = _repo.CompanyApplication.GetCompanyApplication(companyApplicationId, false).ApplicationId;
+                // Eğer kullanıcı doğrulanırsa devam et
+                if (result)
+                {
+                    // Kullanıcıya bağlı CompanyApplicationId'yi al
+                    Guid companyApplicationId = _user.CompanyApplicationId;
 
-                string dbString = _repo.Application.GetApplication(applicationId, false).DbConnection;
-                _dbContextFactory.CreateDbContext(dbString);
+                    // CompanyApplicationId'ye bağlı ApplicationId'yi al
+                    Guid applicationId = _repo.CompanyApplication.GetCompanyApplication(companyApplicationId, false).ApplicationId;
 
-                var data = _repo.Application.GenericRead(false);
-                
-                if (!result)
+                    // ApplicationId'ye bağlı connection string'i al
+                    string dbString = _repo.Application.GetApplication(applicationId, false).DbConnection;
+
+                    // Yeni bir bağlam oluşturun (RepositoryContextAppClient)
+                    var newContext = await ChangeDatabase(dbString);
+
+                    // Diğer servislerde de yeni bağlamı kullanmak istiyorsanız, o servislere bu bağlamı geçirmeniz gerekecek
+                    _logger.LogInformation("Kullanıcı başarıyla doğrulandı ve veritabanı bağlantısı sağlandı.");
+                }
+                else
                 {
                     _logger.LogError("Kullanıcı doğrulama başarısız.");
                 }
@@ -102,6 +106,14 @@ namespace Services.EFCore
                 _logger.LogError("Kullanıcı doğrulanırken bir hata oluştu: {Message}", ex.Message);
                 throw;
             }
+        }
+
+        private async Task<RepositoryContextAppClient> ChangeDatabase(string dbString)
+        {
+            var optionsBuilder = new DbContextOptionsBuilder<RepositoryContextAppClient>();
+            optionsBuilder.UseSqlServer(dbString);
+            var newContext = new RepositoryContextAppClient(optionsBuilder.Options);
+            return newContext;
         }
 
         public async Task<TokenDto> CreateToken(bool populateExp)

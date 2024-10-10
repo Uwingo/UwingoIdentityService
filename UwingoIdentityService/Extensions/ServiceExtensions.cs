@@ -7,9 +7,12 @@ using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
+using RapositoryAppClient;
 using Repositories;
 using Repositories.Contracts;
 using Repositories.EFCore;
+using RepositoryAppClient.Contracts;
+using RepositoryAppClient.EFCore;
 using Services.Contracts;
 using Services.EFCore;
 using System.Text;
@@ -22,6 +25,14 @@ namespace UwingoIdentityService.Extensions
         {
             services.AddDbContext<RepositoryContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            //Migration atarken burayı açmak aşağıdakini kapatmak gerekiyor.
+            //services.AddSingleton<IAuthorizationPolicyProvider, DefaultAuthorizationPolicyProvider>(); 
+        }
+
+        public static void ConfigureDbContextAppClient(this IServiceCollection services, IConfiguration configuration)
+        {
+            services.AddDbContext<RepositoryContextAppClient>(options =>
+                options.UseSqlServer(configuration.GetConnectionString("DefaultConnectionAppClient")));
             //Migration atarken burayı açmak aşağıdakini kapatmak gerekiyor.
             //services.AddSingleton<IAuthorizationPolicyProvider, DefaultAuthorizationPolicyProvider>(); 
         }
@@ -66,7 +77,13 @@ namespace UwingoIdentityService.Extensions
             services.AddScoped<IRepositoryUserRole, RepositoryUserRole>();
             services.AddScoped<IRepositoryBase<User>, RepositoryBase<User>>();
 
-            services.AddScoped<IDbContextFactory, DbContextFactory>();
+            services.AddScoped<IRepositoryAppClientManager, RepositoryAppClientManager>();
+            services.AddScoped<IRepositoryAppClientApplication, RepositoryAppClientApplication>();
+            services.AddScoped<IRepositoryAppClientCompany, RepositoryAppClientCompany>();
+            services.AddScoped<IRepositoryAppClientCompanyApplication, RepositoryAppClientCompanyApplication>();
+            services.AddScoped<IRepositoryAppClientRole, RepositoryAppClientRole>();
+            services.AddScoped<IRepositoryAppClientTenant, RepositoryAppClientTenant>();
+            services.AddScoped<IRepositoryAppClientBase<User>, RepositoryAppClientBase<User>>();
         }
 
         public static void ConfigureServiceManager(this IServiceCollection services)
@@ -152,5 +169,6 @@ namespace UwingoIdentityService.Extensions
                     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
                 });
         }
+
     }
 }

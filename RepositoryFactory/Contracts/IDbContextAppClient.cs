@@ -1,12 +1,13 @@
-﻿using System;
+﻿using Repositories;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories.Contracts
+namespace RepositoryAppClient.Contracts
 {
-    public interface IDbContextFactory
+    public interface IDbContextAppClient<RepositoryContext>
     {
         RepositoryContext CreateDbContext(string connectionString);
     }

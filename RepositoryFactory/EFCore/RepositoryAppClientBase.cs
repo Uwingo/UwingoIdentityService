@@ -1,5 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Repositories.Contracts;
+using RapositoryAppClient;
+using Repositories;
+using RepositoryAppClient.Contracts;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,12 +9,12 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Repositories.EFCore
+namespace RepositoryAppClient.EFCore
 {
-    public class RepositoryBase<T> : IRepositoryBase<T> where T : class
+    public class RepositoryAppClientBase<T> : IRepositoryAppClientBase<T> where T : class
     {
-        private readonly RepositoryContext _context;
-        public RepositoryBase(RepositoryContext context)
+        private readonly RepositoryContextAppClient _context;
+        public RepositoryAppClientBase(RepositoryContextAppClient context)
         {
             _context = context;
         }

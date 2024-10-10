@@ -37,11 +37,6 @@ namespace Repositories.EFCore
         public IRepositoryUserRole UserRole => _repositoryUserRole.Value;
         public IRepositoryUser User => _repositoryUser.Value;
 
-        //public void Save()
-        //{
-        //    _context.SaveChanges();
-        //}
-
         public void Save()
         {
             using (var transaction = _context.Database.BeginTransaction())

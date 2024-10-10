@@ -16,6 +16,7 @@ builder.Services.ConfigureServiceManager();
 builder.Services.ConfigureAuthorizationPolicies();
 builder.Services.ConfigureEmailSenderOptions(builder.Configuration);
 builder.Services.ConfigureJWT(builder.Configuration);
+builder.Services.ConfigureDbContextAppClient(builder.Configuration);
 //builder.Services.ConfigureMyJsonSerializer();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 

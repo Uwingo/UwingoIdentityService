@@ -3,6 +3,7 @@ using Entity.Models;
 using Entity.ModelsDto;
 using Microsoft.Extensions.Logging;
 using Repositories.Contracts;
+using RepositoryAppClient.Contracts;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -16,10 +17,12 @@ namespace Services.EFCore
     {
         private readonly IMapper _mapper;
         private readonly IRepositoryManager _repository;
+        private readonly IRepositoryAppClientManager _repositoryAppClient;
         private readonly ILogger<ApplicationService> _logger;
-        public ApplicationService(IRepositoryManager repository, IMapper mapper, ILogger<ApplicationService> logger)
+        public ApplicationService(IRepositoryManager repository, IRepositoryAppClientManager repositoryAppClient, IMapper mapper, ILogger<ApplicationService> logger)
         {
             _repository = repository;
+            _repositoryAppClient = repositoryAppClient;
             _mapper = mapper;
             _logger = logger;
         }
@@ -52,6 +55,9 @@ namespace Services.EFCore
 
         public IEnumerable<ApplicationDto> GetPaginatedApplication(RequestParameters parameters, bool trackChanges)
         {
+            var serverApplications = _repositoryAppClient.Application.GetPagedApplications(parameters, trackChanges);
+            var serverApplicationDto = _mapper.Map<IEnumerable<ApplicationDto>>(serverApplications);
+
             var applications = _repository.Application.GetPagedApplications(parameters, trackChanges);
             var applicationDto = _mapper.Map<IEnumerable<ApplicationDto>>(applications);
 

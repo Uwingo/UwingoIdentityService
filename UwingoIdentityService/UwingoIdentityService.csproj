@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Repositories\Repositories.csproj" />
+    <ProjectReference Include="..\RepositoryFactory\RepositoryAppClient.csproj" />
     <ProjectReference Include="..\Services\Services.csproj" />
     <ProjectReference Include="..\User\Entity.csproj" />
   </ItemGroup>
