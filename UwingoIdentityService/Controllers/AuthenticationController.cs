@@ -17,12 +17,14 @@ namespace API.Controllers
     public class AuthenticationController : ControllerBase
     {
         private readonly IAuthenticationService _authService;
+        private readonly IRoleService _roleService;
         private readonly ILogger<AuthenticationController> _logger;
 
 
-        public AuthenticationController(IAuthenticationService authService, ILogger<AuthenticationController> logger)
+        public AuthenticationController(IAuthenticationService authService, IRoleService roleService, ILogger<AuthenticationController> logger)
         {
             _authService = authService;
+            _roleService = roleService;
             _logger = logger;
         }
 
@@ -143,7 +145,9 @@ namespace API.Controllers
         [HttpGet("GetAllRoleClaims")]
         public async Task<IActionResult> GetAllRoleClaims()
         {
-            var claims = await _authService.GetRoleClaimsAsync("9970bb6b-2a25-4380-b695-c523b9c0476f");
+            var adminRoleId = _roleService.GetAllRoles().Where(r => r.Name.Contains("Admin")).FirstOrDefault().Id;
+
+            var claims = await _authService.GetRoleClaimsAsync(adminRoleId);
             if (claims.Any())
                 return Ok(claims);
             else

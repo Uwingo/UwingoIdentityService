@@ -373,7 +373,7 @@ namespace Services.EFCore
 
         public async Task<IEnumerable<Claim>> GetRoleClaimsAsync(string roleId)
         {
-            var role = await _roleManager.FindByIdAsync(roleId);
+            var role = await _roleManager.FindByIdAsync(roleId); //1.veritabanına gittiği için null geliyo.
             if (role == null) return null;
 
             return await _roleManager.GetClaimsAsync(role);

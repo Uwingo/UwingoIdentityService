@@ -3,6 +3,7 @@ using Entity.Models;
 using Entity.ModelsDto;
 using Microsoft.Extensions.Logging;
 using Repositories.Contracts;
+using RepositoryAppClient.Contracts;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace Services.EFCore
     {
         private readonly IMapper _mapper;
         private readonly IRepositoryManager _repository;
+        private readonly IRepositoryAppClientManager _repositoryAppClient;
         private readonly ILogger<UserRoleService> _logger;
 
-        public UserRoleService(IRepositoryManager repository, IMapper mapper, ILogger<UserRoleService> logger)
+        public UserRoleService(IRepositoryManager repository, IRepositoryAppClientManager repositoryAppClient, IMapper mapper, ILogger<UserRoleService> logger)
         {
             _repository = repository;
+            _repositoryAppClient = repositoryAppClient;
             _mapper = mapper;
             _logger = logger;
         }

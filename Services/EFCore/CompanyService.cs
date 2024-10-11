@@ -3,6 +3,7 @@ using Entity.Models;
 using Entity.ModelsDto;
 using Microsoft.Extensions.Logging;
 using Repositories.Contracts;
+using RepositoryAppClient.Contracts;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
@@ -16,11 +17,13 @@ namespace Services.EFCore
     {
         private readonly IMapper _mapper;
         private readonly IRepositoryManager _repository;
+        private readonly IRepositoryAppClientManager _repositoryAppClient;
         private readonly ILogger<CompanyService> _logger;
 
-        public CompanyService(IRepositoryManager repository, IMapper mapper, ILogger<CompanyService> logger)
+        public CompanyService(IRepositoryManager repository, IRepositoryAppClientManager repositoryAppClient, IMapper mapper, ILogger<CompanyService> logger)
         {
             _repository = repository;
+            _repositoryAppClient = repositoryAppClient;
             _mapper = mapper;
             _logger = logger;
         }
@@ -30,8 +33,8 @@ namespace Services.EFCore
             try
             {
                 var mappedDto = _mapper.Map<Company>(companyDto);
-                _repository.Company.GenericCreate(mappedDto);
-                _repository.Save();
+                _repositoryAppClient.Company.GenericCreate(mappedDto);
+                _repositoryAppClient.Save();
                 var createdDto = _mapper.Map<CompanyDto>(mappedDto);
                 _logger.LogError("Şirket başarıyla oluşturuldu.");
                 return createdDto;
@@ -47,12 +50,12 @@ namespace Services.EFCore
         {
             try
             {
-                var deletedData = _repository.Company.GetCompany(id, false);
+                var deletedData = _repositoryAppClient.Company.GetCompany(id, false);
 
                 if (deletedData is not null)
                 {
-                    _repository.Company.GenericDelete(deletedData);
-                    _repository.Save();
+                    _repositoryAppClient.Company.GenericDelete(deletedData);
+                    _repositoryAppClient.Save();
                     _logger.LogError("Şirket başarıyla silindi.");
                 }
                 else
@@ -71,7 +74,7 @@ namespace Services.EFCore
         {
             try
             {
-                var companyList = _repository.Company.GenericRead(false);
+                var companyList = _repositoryAppClient.Company.GenericRead(false);
                 var companyDtoList = _mapper.Map<IEnumerable<CompanyDto>>(companyList);
                 _logger.LogError("Tüm şirketler başarıyla getirildi.");
                 return companyDtoList;
@@ -85,7 +88,7 @@ namespace Services.EFCore
 
         public IEnumerable<CompanyDto> GetPaginatedCompanies(RequestParameters parameters, bool trackChanges)
         {
-            var companies = _repository.Company.GetPagedCompanies(parameters, trackChanges);
+            var companies = _repositoryAppClient.Company.GetPagedCompanies(parameters, trackChanges);
             var companiesDto = _mapper.Map<IEnumerable<CompanyDto>>(companies);
 
             return companiesDto;
@@ -95,7 +98,7 @@ namespace Services.EFCore
         {
             try
             {
-                var company = _repository.Company.GetCompany(id, false);
+                var company = _repositoryAppClient.Company.GetCompany(id, false);
                 var companyDto = _mapper.Map<CompanyDto>(company);
                 _logger.LogError("Şirket başarıyla getirildi.");
                 return companyDto;
@@ -111,13 +114,13 @@ namespace Services.EFCore
         {
             try
             {
-                var updatedData = _repository.Company.GetCompany(companyDto.Id, false);
+                var updatedData = _repositoryAppClient.Company.GetCompany(companyDto.Id, false);
 
                 if (updatedData is not null)
                 {
                     var mappedData = _mapper.Map(companyDto, updatedData);
-                    _repository.Company.GenericUpdate(mappedData);
-                    _repository.Save();
+                    _repositoryAppClient.Company.GenericUpdate(mappedData);
+                    _repositoryAppClient.Save();
                     _logger.LogError("Şirket başarıyla güncellendi.");
                 }
                 else
