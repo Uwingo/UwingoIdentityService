@@ -10,6 +10,7 @@ namespace Services.Contracts
     public interface ICompanyService
     {
         IEnumerable<CompanyDto> GetAllCompanies();
+        IEnumerable<CompanyDto> GetAllCompaniesForLogin();
         IEnumerable<CompanyDto> GetPaginatedCompanies(RequestParameters parameters, bool trackChanges);
         CompanyDto GetCompanyById(Guid id);
         CompanyDto CreateCompany(CompanyDto companyDto);

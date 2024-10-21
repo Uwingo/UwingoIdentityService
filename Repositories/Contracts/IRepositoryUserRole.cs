@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Repositories.Contracts
 {
-    public interface IRepositoryUserRole : IRepositoryBase<UserRole>
-    {
-        UserRole GetUserRole(Guid userId, Guid roleId, bool trackChanges);
-        UserRole GetUserRoleByUserId(Guid userId, bool trackChanges);
-        UserRole GetUserRoleByRoleId(Guid roleId, bool trackChanges); 
-        IEnumerable<EntityEntry<UserRole>> GetTrackedUserRoles();
-    }
+    //public interface IRepositoryUserRole : IRepositoryBase<UserRole>
+    //{
+    //    UserRole GetUserRole(Guid userId, Guid roleId, bool trackChanges);
+    //    UserRole GetUserRoleByUserId(Guid userId, bool trackChanges);
+    //    UserRole GetUserRoleByRoleId(Guid roleId, bool trackChanges); 
+    //    IEnumerable<EntityEntry<UserRole>> GetTrackedUserRoles();
+    //}
 }

@@ -11,9 +11,9 @@ namespace Services.Contracts
     {
         IEnumerable<RoleDto> GetAllRoles();
         IEnumerable<RoleDto> GetPaginatedRoles(RequestParameters parameters, bool trackChanges);
-        RoleDto GetRoleById(string id);
-        RoleDto CreateRole(RoleDto roleDto);
-        void UpdateRole(RoleDto roleDto);
-        void DeleteRole(string id);
+        Task<RoleDto> GetRoleById(string id);
+        Task<RoleDto> CreateRole(RoleDto roleDto);
+        Task UpdateRole(RoleDto roleDto);
+        Task DeleteRole(string id);
     }
 }

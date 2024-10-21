@@ -10,6 +10,8 @@ namespace Entity.ModelsDto
     {
         public string UserName { get; set; }
         public string Password { get; set; }
+        public Guid CompanyId { get; set; }
+        public Guid ApplicationId { get; set; }
     }
 
 }

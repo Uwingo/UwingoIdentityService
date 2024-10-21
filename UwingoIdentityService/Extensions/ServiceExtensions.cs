@@ -74,15 +74,11 @@ namespace UwingoIdentityService.Extensions
             services.AddScoped<IRepositoryCompanyApplication, RepositoryCompanyApplication>();
             services.AddScoped<IRepositoryRole, RepositoryRole>();
             services.AddScoped<IRepositoryTenant, RepositoryTenant>();
-            services.AddScoped<IRepositoryUserRole, RepositoryUserRole>();
+            //services.AddScoped<IRepositoryUserRole, RepositoryUserRole>();
             services.AddScoped<IRepositoryBase<User>, RepositoryBase<User>>();
 
             services.AddScoped<IRepositoryAppClientManager, RepositoryAppClientManager>();
-            services.AddScoped<IRepositoryAppClientApplication, RepositoryAppClientApplication>();
-            services.AddScoped<IRepositoryAppClientCompany, RepositoryAppClientCompany>();
-            services.AddScoped<IRepositoryAppClientCompanyApplication, RepositoryAppClientCompanyApplication>();
             services.AddScoped<IRepositoryAppClientRole, RepositoryAppClientRole>();
-            services.AddScoped<IRepositoryAppClientTenant, RepositoryAppClientTenant>();
             services.AddScoped<IRepositoryAppClientBase<User>, RepositoryAppClientBase<User>>();
         }
 
@@ -97,7 +93,7 @@ namespace UwingoIdentityService.Extensions
             services.AddScoped<ICompanyApplicationService, CompanyApplicationService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<ITenantService, TenantService>();
-            services.AddScoped<IUserRoleService, UserRoleService>();
+            //services.AddScoped<IUserRoleService, UserRoleService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IEmailService, EmailService>();
             

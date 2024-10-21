@@ -13,7 +13,6 @@ namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize (Policy = "RoleController")]
     public class RoleController : ControllerBase
     {
         private readonly IRoleService _roleService;
@@ -65,7 +64,7 @@ namespace Presentation.Controllers
         {
             try
             {
-                var role = _roleService.GetRoleById(id);
+                var role = await _roleService.GetRoleById(id);
                 if (role == null)
                 {
                     _logger.LogWarning("Rol bulunamadı.");

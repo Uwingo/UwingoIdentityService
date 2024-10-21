@@ -18,13 +18,11 @@ namespace Services.EFCore
     {
         private readonly IMapper _mapper;
         private readonly IRepositoryManager _repository;
-        private readonly IRepositoryAppClientManager _repositoryAppClient;
         private readonly ILogger<TenantService> _logger;
 
-        public TenantService(IRepositoryManager repository, IRepositoryAppClientManager repositoryAppClient, IMapper mapper, ILogger<TenantService> logger)
+        public TenantService(IRepositoryManager repository, IMapper mapper, ILogger<TenantService> logger)
         {
             _repository = repository;
-            _repositoryAppClient = repositoryAppClient;
             _mapper = mapper;
             _logger = logger;
         }
@@ -34,8 +32,8 @@ namespace Services.EFCore
             try
             {
                 var mappedDto = _mapper.Map<Tenant>(tenantDto);
-                _repositoryAppClient.Tenant.GenericCreate(mappedDto);
-                _repositoryAppClient.Save();
+                _repository.Tenant.GenericCreate(mappedDto);
+                _repository.Save();
                 var createdDto = _mapper.Map<TenantDto>(mappedDto);
                 _logger.LogError("Kiracı başarıyla oluşturuldu.");
                 return createdDto;
@@ -51,12 +49,12 @@ namespace Services.EFCore
         {
             try
             {
-                var deletedData = _repositoryAppClient.Tenant.GetTenantByTenantId(id, false);
+                var deletedData = _repository.Tenant.GetTenantByTenantId(id, false);
 
                 if (deletedData is not null)
                 {
-                    _repositoryAppClient.Tenant.GenericDelete(deletedData);
-                    _repositoryAppClient.Save();
+                    _repository.Tenant.GenericDelete(deletedData);
+                    _repository.Save();
                     _logger.LogError("Kiracı başarıyla silindi.");
                 }
                 else
@@ -75,7 +73,7 @@ namespace Services.EFCore
         {
             try
             {
-                var tenantList = _repositoryAppClient.Tenant.GenericRead(false);
+                var tenantList = _repository.Tenant.GenericRead(false);
                 var tenantDtoList = _mapper.Map<IEnumerable<TenantDto>>(tenantList);
                 _logger.LogError("Tüm kiracılar başarıyla getirildi.");
                 return tenantDtoList;
@@ -91,7 +89,7 @@ namespace Services.EFCore
         {
             try
             {
-                var tenants = _repositoryAppClient.Tenant.GetPagedTenants(parameters, trackChanges);
+                var tenants = _repository.Tenant.GetPagedTenants(parameters, trackChanges);
                 var tenantsDto = _mapper.Map<IEnumerable<TenantDto>>(tenants);
                 _logger.LogError("Tüm kiracılar pagination ile başarıyla getirildi.");
                 return tenantsDto;
@@ -107,7 +105,7 @@ namespace Services.EFCore
         {
             try
             {
-                var tenant = _repositoryAppClient.Tenant.GetTenantByTenantId(id, false);
+                var tenant = _repository.Tenant.GetTenantByTenantId(id, false);
                 var tenantDto = _mapper.Map<TenantDto>(tenant);
                 _logger.LogError("Kiracı tenantId ile başarıyla getirildi.");
                 return tenantDto;
@@ -123,13 +121,13 @@ namespace Services.EFCore
         {
             try
             {
-                var updatedData = _repositoryAppClient.Tenant.GetTenantByTenantId(tenantDto.Id, false);
+                var updatedData = _repository.Tenant.GetTenantByTenantId(tenantDto.Id, false);
 
                 if (updatedData is not null)
                 {
                     var mappedData = _mapper.Map(tenantDto, updatedData);
-                    _repositoryAppClient.Tenant.GenericUpdate(mappedData);
-                    _repositoryAppClient.Save();
+                    _repository.Tenant.GenericUpdate(mappedData);
+                    _repository.Save();
                     _logger.LogError("Kiracı başarıyla güncellendi.");
                 }
                 else

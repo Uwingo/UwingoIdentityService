@@ -1,14 +1,7 @@
 ﻿using Entity.Models;
 using Entity.ModelsDto;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
-using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Services.Contracts
 {
@@ -32,12 +25,17 @@ namespace Services.Contracts
         Task<IdentityResult> RemoveRoleClaimAsync(string roleId, string claimType, string claimValue);
         int GetUserCount();
         List<User> GetAllUsers();
-        List<UserDto> GetPaginatedUsers(RequestParameters parameters, bool trackChanges);
+        Task<List<UserDto>> GetPaginatedUsers(RequestParameters parameters, bool trackChanges);
         List<UserDto> GetPaginatedApplicationUsers(RequestParameters parameters, bool trackChanges, Guid applicationId);        Task<List<Claim>> GetAllClaims();
         Task<IdentityResult> UpdateUserClaimsAsync(string userId, List<ClaimDto> newClaims);
         Task<IdentityResult> UpdateRoleClaimsAsync(string roleId, List<ClaimDto> newClaims);
         Task<bool> ForgotPasswordAsync(string email);
         Task<IdentityResult> ResetPasswordAsync(ResetPasswordDto resetPasswordDto);
         Task<IdentityResult> ChangePassword(User user, string currentPassword, string newPassword);
+        Task<List<UwingoUserDto>> GetUsersByCompanyApplication(Guid companyId, Guid applicationId);
+        Task<List<RoleDto>> GetRolesByCompanyApplication(Guid companyId, Guid applicationId);
+        Task<List<UwingoUser>> GetAllUsersByCompanyApplicationId(Guid companyId, Guid applicationId);
+        Task<UwingoUser> GetAdminId(Guid companyId, Guid applicationId);
+        Task<Role> GetAdminRoleId(Guid companyId, Guid applicationId);
     }
 }

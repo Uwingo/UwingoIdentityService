@@ -14,8 +14,5 @@ namespace Entity.Models
         [ForeignKey("CompanyApplicationId")]
         public Guid CompanyApplicationId { get; set; }
         public CompanyApplication CompanyApplication { get; set; }
-        [JsonIgnore]
-        public ICollection<UserRole> UserRoles { get; set; }
     }
-
 }

@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 
 namespace RepositoryAppClient.EFCore
 {
-    public class RepositoryAppClientUser : RepositoryAppClientBase<User>, IRepositoryAppClientUser
+    public class RepositoryAppClientUser : RepositoryAppClientBase<UwingoUser>, IRepositoryAppClientUser
     {
         private readonly RepositoryContextAppClient _context;
         public RepositoryAppClientUser(RepositoryContextAppClient context) : base(context)
@@ -30,7 +30,7 @@ namespace RepositoryAppClient.EFCore
             return userClaims;
         }
 
-        public IEnumerable<User> GetPagedUsers(RequestParameters parameters, bool trackChanges)
+        public IEnumerable<UwingoUser> GetPagedUsers(RequestParameters parameters, bool trackChanges)
         {
             var pagedUsers = _context.Users.AsQueryable().Skip((parameters.PageNumber - 1) * parameters.PageSize)
                              .Take(parameters.PageSize)

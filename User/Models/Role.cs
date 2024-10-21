@@ -11,7 +11,7 @@ namespace Entity.Models
     public class Role : IdentityRole
     {
         public string Description { get; set; }
-        [JsonIgnore]
-        public ICollection<UserRole> UserRoles { get; set; }
+        //[JsonIgnore]
+        //public ICollection<UserRole> UserRoles { get; set; }
     }
 }

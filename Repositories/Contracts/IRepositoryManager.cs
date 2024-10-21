@@ -13,7 +13,8 @@ namespace Repositories.Contracts
         IRepositoryCompanyApplication CompanyApplication { get; }
         IRepositoryRole Role { get; }
         IRepositoryTenant Tenant { get; }
-        IRepositoryUserRole UserRole { get; }
+        IRepositoryUserDbMatch UserDbMatch { get; }
+        IRepositoryRoleDbMatch RoleDbMatch { get; }
         IRepositoryUser User { get; }
         void Save(); //unit of work
     }

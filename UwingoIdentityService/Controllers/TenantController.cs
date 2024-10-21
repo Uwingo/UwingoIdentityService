@@ -12,7 +12,6 @@ namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "TenantController")]
     public class TenantController : ControllerBase
     {
         private readonly ITenantService _tenantService;

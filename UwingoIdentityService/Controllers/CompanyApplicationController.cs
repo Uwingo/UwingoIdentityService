@@ -12,7 +12,6 @@ namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "CompanyApplicationController")]
     public class CompanyApplicationController : ControllerBase
     {
         private readonly ICompanyApplicationService _companyApplicationService;

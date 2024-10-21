@@ -9,9 +9,9 @@ using System.Threading.Tasks;
 
 namespace RepositoryAppClient.Contracts
 {
-    public interface IRepositoryAppClientUser : IRepositoryAppClientBase<User>
+    public interface IRepositoryAppClientUser : IRepositoryAppClientBase<UwingoUser>
     {
         Task<List<Claim>> GetAllClaimsAsync();
-        public IEnumerable<User> GetPagedUsers(RequestParameters parameters, bool trackChanges);
+        public IEnumerable<UwingoUser> GetPagedUsers(RequestParameters parameters, bool trackChanges);
     }
 }

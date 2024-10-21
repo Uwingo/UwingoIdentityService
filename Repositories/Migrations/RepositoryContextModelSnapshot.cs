@@ -28,10 +28,6 @@ namespace Repositories.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier");
 
-                    b.Property<string>("DbConnection")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -77,6 +73,10 @@ namespace Repositories.Migrations
                     b.Property<Guid>("CompanyId")
                         .HasColumnType("uniqueidentifier");
 
+                    b.Property<string>("DbConnection")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.HasIndex("ApplicationId");
@@ -119,25 +119,45 @@ namespace Repositories.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b492a2c4-d059-4551-b55e-568e9c249bb2",
+                            Id = "b8ce8747-e5ac-4071-b4ff-0db1b3e1608b",
                             Description = "Uygulama Kullanıcısı",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "c43bbc5b-adc5-4ba8-9458-65a427f27156",
+                            Id = "0b91dfe7-d2b1-4d7f-a0e4-383daaeb2d7a",
                             Description = "Yönetici (Uwingo) Admin",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "28223bd1-938d-4b93-a2c4-f49dcab6bef9",
+                            Id = "713cba6d-f189-4962-bd17-3930e082aa6a",
                             Description = "Kiracı Admini",
                             Name = "TenantAdmin",
                             NormalizedName = "TENANTADMIN"
                         });
+                });
+
+            modelBuilder.Entity("Entity.Models.RoleDatabaseMatch", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CompanyApplicationId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CompanyApplicationId");
+
+                    b.ToTable("RoleDatabaseMatches");
                 });
 
             modelBuilder.Entity("Entity.Models.Tenant", b =>
@@ -239,22 +259,28 @@ namespace Repositories.Migrations
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("Entity.Models.UserRole", b =>
+            modelBuilder.Entity("Entity.Models.UserDatabaseMatch", b =>
                 {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("CompanyApplicationId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("RoleId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("UserName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("AssignedDate")
-                        .HasColumnType("datetime2");
+                    b.HasKey("Id");
 
-                    b.HasKey("UserId", "RoleId");
+                    b.HasIndex("CompanyApplicationId");
 
-                    b.HasIndex("RoleId");
-
-                    b.ToTable("AspNetUserRoles", (string)null);
+                    b.ToTable("UserDatabaseMatches");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -329,6 +355,21 @@ namespace Repositories.Migrations
                     b.ToTable("AspNetUserLogins", (string)null);
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.Property<string>("UserId")
@@ -378,6 +419,17 @@ namespace Repositories.Migrations
                     b.Navigation("Company");
                 });
 
+            modelBuilder.Entity("Entity.Models.RoleDatabaseMatch", b =>
+                {
+                    b.HasOne("Entity.Models.CompanyApplication", "CompanyApplication")
+                        .WithMany()
+                        .HasForeignKey("CompanyApplicationId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CompanyApplication");
+                });
+
             modelBuilder.Entity("Entity.Models.User", b =>
                 {
                     b.HasOne("Entity.Models.CompanyApplication", "CompanyApplication")
@@ -389,23 +441,15 @@ namespace Repositories.Migrations
                     b.Navigation("CompanyApplication");
                 });
 
-            modelBuilder.Entity("Entity.Models.UserRole", b =>
+            modelBuilder.Entity("Entity.Models.UserDatabaseMatch", b =>
                 {
-                    b.HasOne("Entity.Models.Role", "Role")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("RoleId")
+                    b.HasOne("Entity.Models.CompanyApplication", "CompanyApplication")
+                        .WithMany()
+                        .HasForeignKey("CompanyApplicationId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Entity.Models.User", "User")
-                        .WithMany("UserRoles")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Role");
-
-                    b.Navigation("User");
+                    b.Navigation("CompanyApplication");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -435,6 +479,21 @@ namespace Repositories.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Entity.Models.Role", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Entity.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
                     b.HasOne("Entity.Models.User", null)
@@ -452,16 +511,6 @@ namespace Repositories.Migrations
             modelBuilder.Entity("Entity.Models.Company", b =>
                 {
                     b.Navigation("CompanyApplications");
-                });
-
-            modelBuilder.Entity("Entity.Models.Role", b =>
-                {
-                    b.Navigation("UserRoles");
-                });
-
-            modelBuilder.Entity("Entity.Models.User", b =>
-                {
-                    b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
         }

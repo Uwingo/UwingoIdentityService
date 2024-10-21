@@ -17,14 +17,12 @@ namespace Services.EFCore
     public class CompanyApplicationService : ICompanyApplicationService
     {
         private readonly IRepositoryManager _repository;
-        private readonly IRepositoryAppClientManager _repositoryAppClient;
         private readonly IMapper _mapper;
         private readonly ILogger<CompanyApplicationService> _logger;
 
-        public CompanyApplicationService(IRepositoryManager repository, IRepositoryAppClientManager repositoryAppClient, IMapper mapper, ILogger<CompanyApplicationService> logger)
+        public CompanyApplicationService(IRepositoryManager repository, IMapper mapper, ILogger<CompanyApplicationService> logger)
         {
             _repository = repository;
-            _repositoryAppClient = repositoryAppClient;
             _mapper = mapper;
             _logger = logger;
         }
@@ -35,8 +33,8 @@ namespace Services.EFCore
             {
                 companyApplicationDto.Id = Guid.NewGuid();
                 var mappedDto = _mapper.Map<CompanyApplication>(companyApplicationDto);
-                _repositoryAppClient.CompanyApplication.GenericCreate(mappedDto);
-                _repositoryAppClient.Save();
+                _repository.CompanyApplication.GenericCreate(mappedDto);
+                _repository.Save();
                 var createdDto = _mapper.Map<CompanyApplicationDto>(mappedDto);
                 _logger.LogError("Şirket uygulaması başarıyla oluşturuldu.");
                 return createdDto;
@@ -55,8 +53,8 @@ namespace Services.EFCore
 
                 if (deletedData is not null)
                 {
-                    _repositoryAppClient.CompanyApplication.GenericDelete(deletedData);
-                    _repositoryAppClient.Save();
+                    _repository.CompanyApplication.GenericDelete(deletedData);
+                    _repository.Save();
                     _logger.LogError("Şirket uygulaması başarıyla silindi.");
                 }
                 else
@@ -75,7 +73,7 @@ namespace Services.EFCore
         {
             try
             {
-                var companyApplicationList = _repositoryAppClient.CompanyApplication.GenericRead(false);
+                var companyApplicationList = _repository.CompanyApplication.GenericRead(false);
                 var companyApplicationDtoList = _mapper.Map<IEnumerable<CompanyApplicationDto>>(companyApplicationList);
                 _logger.LogError("Tüm şirket uygulamaları başarıyla getirildi.");
                 return companyApplicationDtoList;
@@ -89,7 +87,7 @@ namespace Services.EFCore
 
         public IEnumerable<CompanyApplicationDto> GetPaginatedCompanyApplication(RequestParameters parameters, bool trackChanges)
         {
-            var companyApplications = _repositoryAppClient.CompanyApplication.GetPagedCompanyApplications(parameters, trackChanges);
+            var companyApplications = _repository.CompanyApplication.GetPagedCompanyApplications(parameters, trackChanges);
             var companyApplicationDto = _mapper.Map<IEnumerable<CompanyApplicationDto>>(companyApplications);
 
             return companyApplicationDto;
@@ -99,7 +97,7 @@ namespace Services.EFCore
         {
             try
             {
-                var companyApplication = _repositoryAppClient.CompanyApplication.GetCompanyApplication(id, false);
+                var companyApplication = _repository.CompanyApplication.GetCompanyApplication(id, false);
                 var companyApplicationDto = _mapper.Map<CompanyApplicationDto>(companyApplication);
                 _logger.LogError("Şirket uygulaması başarıyla getirildi.");
                 return companyApplicationDto;
@@ -115,10 +113,10 @@ namespace Services.EFCore
         {
             try
             {
-                var company = _repositoryAppClient.Company.GetCompany(companyApplicationDto.CompanyId, false);
-                var application = _repositoryAppClient.Application.GetApplication(companyApplicationDto.ApplicationId, false);
+                var company = _repository.Company.GetCompany(companyApplicationDto.CompanyId, false);
+                var application = _repository.Application.GetApplication(companyApplicationDto.ApplicationId, false);
                 // Önce veritabanından ilgili kaydı çekiyoruz
-                var updatedData = _repositoryAppClient.CompanyApplication.GetCompanyApplication(companyApplicationDto.Id, true);
+                var updatedData = _repository.CompanyApplication.GetCompanyApplication(companyApplicationDto.Id, true);
 
                 if (updatedData is not null)
                 {
@@ -128,10 +126,10 @@ namespace Services.EFCore
                     _mapper.Map(companyApplicationDto, updatedData);
 
                     // Veritabanında güncelleme yapıyoruz
-                    _repositoryAppClient.CompanyApplication.GenericUpdate(updatedData);
+                    _repository.CompanyApplication.GenericUpdate(updatedData);
 
                     // Değişiklikleri kaydediyoruz
-                    _repositoryAppClient.Save();
+                    _repository.Save();
 
                     _logger.LogInformation("Şirket uygulaması başarıyla güncellendi.");
                 }
@@ -157,7 +155,7 @@ namespace Services.EFCore
         {
             try
             {
-                var companyApplications = _repositoryAppClient.CompanyApplication.GetCompanyApplicationByCompanyId(companyId, false);
+                var companyApplications = _repository.CompanyApplication.GetCompanyApplicationByCompanyId(companyId, false);
                 var companyApplicationDtos = _mapper.Map<IEnumerable<CompanyApplicationDto>>(companyApplications);
                 _logger.LogError("Şirketin uygulamaları başarıyla getirildi.");
                 return companyApplicationDtos;
@@ -173,7 +171,7 @@ namespace Services.EFCore
         {
             try
             {
-                var companyApplications = _repositoryAppClient.CompanyApplication.GetCompanyApplicationByApplicationId(applicationId, false);
+                var companyApplications = _repository.CompanyApplication.GetCompanyApplicationByApplicationId(applicationId, false);
                 var companyApplicationDtos = _mapper.Map<IEnumerable<CompanyApplicationDto>>(companyApplications);
                 _logger.LogError("Uygulamayı kullanan şirketler başarıyla getirildi.");
                 return companyApplicationDtos;

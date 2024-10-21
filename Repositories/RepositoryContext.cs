@@ -7,7 +7,7 @@ using System;
 
 namespace Repositories
 {
-    public class RepositoryContext : IdentityDbContext<User, Role, string, IdentityUserClaim<string>, UserRole, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
+    public class RepositoryContext : IdentityDbContext<User, Role, string, IdentityUserClaim<string>, IdentityUserRole<string>, IdentityUserLogin<string>, IdentityRoleClaim<string>, IdentityUserToken<string>>
     {
         public RepositoryContext(DbContextOptions<RepositoryContext> options) : base(options) { }
 
@@ -16,8 +16,8 @@ namespace Repositories
         public DbSet<User> Employees { get; set; }
         public DbSet<Application> Applications { get; set; }
         public DbSet<CompanyApplication> CompanyApplications { get; set; }
-
-       
+        public DbSet<UserDatabaseMatch> UserDatabaseMatches { get; set; }
+        public DbSet<RoleDatabaseMatch> RoleDatabaseMatches { get; set; }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
@@ -31,7 +31,6 @@ namespace Repositories
                 .WithMany()
                 .HasForeignKey(c => c.TenantId)
                 .OnDelete(DeleteBehavior.Cascade);
-
 
             // Company - Application Many-to-Many ilişkisi
             builder.Entity<CompanyApplication>()
@@ -47,21 +46,23 @@ namespace Repositories
                 .WithMany(a => a.CompanyApplications)
                 .HasForeignKey(ca => ca.ApplicationId);
 
-            // IdentityUserRole ilişkisi
-            builder.Entity<UserRole>(userRole =>
-            {
-                userRole.HasKey(ur => new { ur.UserId, ur.RoleId });
+            // UserDatabaseMatch entity configuration
+            builder.Entity<UserDatabaseMatch>()
+                .HasKey(udm => udm.Id);
 
-                userRole.HasOne(ur => ur.User)
-                    .WithMany(u => u.UserRoles)
-                    .HasForeignKey(ur => ur.UserId)
-                    .IsRequired();
+            builder.Entity<UserDatabaseMatch>()
+                .HasOne(udm => udm.CompanyApplication)
+                .WithMany()
+                .HasForeignKey(udm => udm.CompanyApplicationId);
 
-                userRole.HasOne(ur => ur.Role)
-                    .WithMany(r => r.UserRoles)
-                    .HasForeignKey(ur => ur.RoleId)
-                    .IsRequired();
-            });
+            // RoleDatabaseMatch entity configuration
+            builder.Entity<RoleDatabaseMatch>()
+                .HasKey(rdm => rdm.Id);
+
+            builder.Entity<RoleDatabaseMatch>()
+                .HasOne(rdm => rdm.CompanyApplication)
+                .WithMany()
+                .HasForeignKey(rdm => rdm.CompanyApplicationId);
         }
     }
 }

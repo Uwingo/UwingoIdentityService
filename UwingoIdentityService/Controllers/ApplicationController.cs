@@ -64,6 +64,23 @@ namespace UwingoIdentityService.Controllers
             }
         }
 
+        [HttpGet("GetAllApplicationsForLogin")]
+        public async Task<IActionResult> GetAllApplicationsForLogin()
+        {
+            try
+            {
+                var applications = _applicationService.GetAllApplicationForLogin();
+                _logger.LogError("Tüm uygulamalar başarıyla getirildi.");
+                return Ok(applications);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Uygulamalar getirilirken bir hata oluştu: {Message}", ex.Message);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+        
+
         [HttpGet("GetApplicationById/{id}")]
         public async Task<IActionResult> GetApplicationById(Guid id)
         {

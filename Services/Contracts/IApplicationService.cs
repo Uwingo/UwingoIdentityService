@@ -10,6 +10,7 @@ namespace Services.Contracts
     public interface IApplicationService
     {
         IEnumerable<ApplicationDto> GetAllApplication();
+        IEnumerable<ApplicationDto> GetAllApplicationForLogin();
         ApplicationDto GetByIdApplication(Guid id);
         ApplicationDto CreateApplication(ApplicationDto applicationDto);
         IEnumerable<ApplicationDto> GetPaginatedApplication(RequestParameters parameters, bool trackChanges);

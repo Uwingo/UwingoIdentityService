@@ -11,7 +11,6 @@ namespace Entity.Models
     {
         public Guid Id { get; set; }
         public string Name { get; set; }
-        public string DbConnection { get; set; }
         public ICollection<CompanyApplication> CompanyApplications { get; set; }
     }
 }

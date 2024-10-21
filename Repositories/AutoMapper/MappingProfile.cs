@@ -18,9 +18,12 @@ namespace Repositories.AutoMapper
             CreateMap<CompanyApplication, CompanyApplicationDto>().ReverseMap();
             CreateMap<Role, RoleDto>().ReverseMap();
             CreateMap<Tenant, TenantDto>().ReverseMap();
-            CreateMap<UserRole, UserRoleDto>().ReverseMap();
+            CreateMap<UwingoUser, UwingoUserDto>().ReverseMap();
+            CreateMap<UwingoUser, User>().ReverseMap();
             CreateMap<UserRegistrationDto, User>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();
+            CreateMap<UserDatabaseMatch, UserDatabaseMatchDto>().ReverseMap();
+            CreateMap<RoleDatabaseMatch, RoleDatabaseMatchDto>().ReverseMap();
         }
     }
 }

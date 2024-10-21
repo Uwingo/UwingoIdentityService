@@ -15,7 +15,8 @@ namespace Repositories.EFCore
         private readonly Lazy<IRepositoryCompanyApplication> _repository;
         private readonly Lazy<IRepositoryRole> _repositoryRole;
         private readonly Lazy<IRepositoryTenant> _repositoryTenant;
-        private readonly Lazy<IRepositoryUserRole> _repositoryUserRole;
+        private readonly Lazy<IRepositoryUserDbMatch> _repositoryUserDbMatch;
+        private readonly Lazy<IRepositoryRoleDbMatch> _repositoryRoleDbMatch;
         private readonly Lazy<IRepositoryUser> _repositoryUser;
         public RepositoryManager(RepositoryContext context)
         {
@@ -25,7 +26,8 @@ namespace Repositories.EFCore
             _repository = new Lazy<IRepositoryCompanyApplication>(() => new RepositoryCompanyApplication(_context));
             _repositoryRole = new Lazy<IRepositoryRole>(() => new RepositoryRole(_context));
             _repositoryTenant = new Lazy<IRepositoryTenant>(() => new RepositoryTenant(_context));
-            _repositoryUserRole = new Lazy<IRepositoryUserRole>(() => new RepositoryUserRole(_context));
+            _repositoryUserDbMatch = new Lazy<IRepositoryUserDbMatch>(() => new RepositoryUserDbMatch(_context));
+            _repositoryRoleDbMatch = new Lazy<IRepositoryRoleDbMatch>(() => new RepositoryRoleDbMatch(_context));
             _repositoryUser = new Lazy<IRepositoryUser>(() => new RepositoryUser(_context));
         }
 
@@ -34,7 +36,8 @@ namespace Repositories.EFCore
         public IRepositoryCompanyApplication CompanyApplication => _repository.Value;
         public IRepositoryRole Role => _repositoryRole.Value;
         public IRepositoryTenant Tenant => _repositoryTenant.Value;
-        public IRepositoryUserRole UserRole => _repositoryUserRole.Value;
+        public IRepositoryUserDbMatch UserDbMatch => _repositoryUserDbMatch.Value;
+        public IRepositoryRoleDbMatch RoleDbMatch => _repositoryRoleDbMatch.Value;
         public IRepositoryUser User => _repositoryUser.Value;
 
         public void Save()

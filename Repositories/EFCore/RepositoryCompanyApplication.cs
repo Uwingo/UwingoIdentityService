@@ -19,6 +19,10 @@ namespace Repositories.EFCore
 
         public CompanyApplication GetCompanyApplication(Guid id, bool trackChanges) 
             => GenericReadExpression(ca => ca.Id.Equals(id), trackChanges).SingleOrDefault();
+
+        public CompanyApplication GetCompanyApplicationByApplicationAndCompanyId(Guid companyId, Guid applicationId, bool trackChanges)
+            => GenericReadExpression(ca => ca.CompanyId.Equals(companyId) && ca.ApplicationId.Equals(applicationId), trackChanges).SingleOrDefault();
+
         public IEnumerable<CompanyApplication> GetCompanyApplicationByApplicationId(Guid applicationId, bool trackChanges) 
             => GenericReadExpression(x => x.ApplicationId.Equals(applicationId), trackChanges);
         public IEnumerable<CompanyApplication> GetCompanyApplicationByCompanyId(Guid companyId, bool trackChanges) 

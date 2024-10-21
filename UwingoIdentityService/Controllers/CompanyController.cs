@@ -14,7 +14,7 @@ namespace Presentation.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize(Policy = "CompanyController")]
+    
     public class CompanyController : ControllerBase
     {
         private readonly ICompanyService _companyService;
@@ -35,6 +35,22 @@ namespace Presentation.Controllers
             try
             {
                 var companies = _companyService.GetAllCompanies();
+                _logger.LogInformation("Tüm şirketler başarıyla getirildi.");
+                return Ok(companies);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Şirketler getirilirken bir hata oluştu: {Message}", ex.Message);
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        [HttpGet("GetAllCompaniesForLogin")]
+        public async Task<IActionResult> GetAllCompaniesForLogin()
+        {
+            try
+            {
+                var companies = _companyService.GetAllCompaniesForLogin();
                 _logger.LogInformation("Tüm şirketler başarıyla getirildi.");
                 return Ok(companies);
             }

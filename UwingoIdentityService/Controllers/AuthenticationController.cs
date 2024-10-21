@@ -3,11 +3,17 @@ using Entity.Models;
 using Entity.ModelsDto;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
+using Newtonsoft.Json;
+using RapositoryAppClient;
+using RepositoryAppClient.Contracts;
 using Services.Contracts;
 using Services.EFCore;
 using System;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace API.Controllers
@@ -19,13 +25,15 @@ namespace API.Controllers
         private readonly IAuthenticationService _authService;
         private readonly IRoleService _roleService;
         private readonly ILogger<AuthenticationController> _logger;
+        private readonly IRepositoryAppClientManager _repositoryAppClient;
 
 
-        public AuthenticationController(IAuthenticationService authService, IRoleService roleService, ILogger<AuthenticationController> logger)
+        public AuthenticationController(IAuthenticationService authService, IRepositoryAppClientManager repositoryAppClient, IRoleService roleService, ILogger<AuthenticationController> logger)
         {
             _authService = authService;
             _roleService = roleService;
             _logger = logger;
+            _repositoryAppClient = repositoryAppClient;
         }
 
         #region register
@@ -56,6 +64,7 @@ namespace API.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
         #endregion
         #region Login
         [HttpPost("login")]
@@ -123,6 +132,24 @@ namespace API.Controllers
             }
         }
         #endregion
+        #region GetUsersByCompanyApplication
+        [HttpGet("GetUsersByCompanyApplication")]
+        public async Task<IActionResult> GetUsersByCompanyApplication(Guid companyId, Guid applicationId, int pageNumber = 1, int pageSize = 10)
+        {
+            var users = await _authService.GetUsersByCompanyApplication(companyId, applicationId);
+
+            return Ok(users);
+        }
+        #endregion
+        #region GetRolesByCompanyApplication
+        [HttpGet("GetRolesByCompanyApplication")]
+        public async Task<IActionResult> GetRolesByCompanyApplication(Guid companyId, Guid applicationId, int pageNumber = 1, int pageSize = 10)
+        {
+            var roles = await _authService.GetRolesByCompanyApplication(companyId, applicationId);
+
+            return Ok(roles);
+        }
+        #endregion
         #region GetClaims/{username}
         [HttpGet("GetClaims/{username}")]
         public async Task<IActionResult> GetClaims(string userName)
@@ -133,21 +160,24 @@ namespace API.Controllers
         }
         #endregion
         #region GetAllUserClaims
-        [HttpGet("GetAllUserClaims")]
-        public async Task<IActionResult> GetAllUserClaims()
+        [HttpGet("GetAllUserClaims/{companyId}/{applicationId}")]
+        public async Task<IActionResult> GetAllUserClaims(Guid companyId, Guid applicationId)
         {
-            //var claim = await _authService.GetAllClaims();
-            var claim = await _authService.GetUserClaimsAsync("66895f4e-3ad4-48d3-9f91-43727075edbb"); //Adminin yetkileri
+            var caUsers = await _authService.GetAllUsersByCompanyApplicationId(companyId, applicationId);
+            var caAdmin = await _authService.GetAdminId(companyId, applicationId);
+            var claim = await _authService.GetUserClaimsAsync(caAdmin.Id); //Adminin yetkileri
+
+            //var claim = await _authService.GetUserClaimsAsync("66895f4e-3ad4-48d3-9f91-43727075edbb"); //Adminin yetkileri
             return Ok(claim);
         }
         #endregion
         #region GetAllRoleClaims
-        [HttpGet("GetAllRoleClaims")]
-        public async Task<IActionResult> GetAllRoleClaims()
+        [HttpGet("GetAllRoleClaims/{companyId}/{applicationId}")]
+        public async Task<IActionResult> GetAllRoleClaims(Guid companyId, Guid applicationId)
         {
-            var adminRoleId = _roleService.GetAllRoles().Where(r => r.Name.Contains("Admin")).FirstOrDefault().Id;
+            var adminRole = await _authService.GetAdminRoleId(companyId, applicationId);
 
-            var claims = await _authService.GetRoleClaimsAsync(adminRoleId);
+            var claims = await _authService.GetRoleClaimsAsync(adminRole.Id);
             if (claims.Any())
                 return Ok(claims);
             else
@@ -220,6 +250,7 @@ namespace API.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
         #endregion
         #region ChangePassword
         [HttpPut("ChangePassword")]
@@ -277,9 +308,9 @@ namespace API.Controllers
         #region GetPaginatedUsers
         [HttpGet("GetPaginatedUsers")]
         [Authorize(Policy = "GetAllUsers")]
-        public IActionResult GetPaginatedUsers([FromQuery] RequestParameters parameters, bool trackChanges)
+        public async Task<IActionResult> GetPaginatedUsers([FromQuery] RequestParameters parameters, bool trackChanges)
         {
-            var users = _authService.GetPaginatedUsers(parameters, trackChanges);
+            var users = await _authService.GetPaginatedUsers(parameters, trackChanges);
             if (users is not null) return Ok(users);
             else return BadRequest("Kullanıcıları getirme işlemi başarısız");
         }
@@ -373,7 +404,6 @@ namespace API.Controllers
                 return StatusCode(500, "Internal server error.");
             }
         }
-
         #endregion
         #region UpdateRoleClaims
         [HttpPut("UpdateRoleClaims")]

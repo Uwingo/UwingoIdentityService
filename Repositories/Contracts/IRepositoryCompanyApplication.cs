@@ -13,6 +13,7 @@ namespace Repositories.Contracts
         CompanyApplication GetCompanyApplication(Guid id, bool trackChanges);
         IEnumerable<CompanyApplication> GetCompanyApplicationByCompanyId(Guid companyId, bool trackChanges);
         IEnumerable<CompanyApplication> GetCompanyApplicationByApplicationId(Guid applicationId, bool trackChanges);
+        CompanyApplication GetCompanyApplicationByApplicationAndCompanyId(Guid companyId ,Guid applicationId, bool trackChanges);
         public IEnumerable<CompanyApplication> GetPagedCompanyApplications(RequestParameters parameters, bool trackChanges);
 
     }

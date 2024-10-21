@@ -11,5 +11,6 @@ namespace Entity.ModelsDto
         public Guid Id { get; set; }
         public Guid CompanyId { get; set; }
         public Guid ApplicationId { get; set; }
+        public string DbConnection { get; set; }
     }
 }

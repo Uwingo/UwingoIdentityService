@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity;
 using Services.Contracts;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Net;
 using System.Security.Claims;
@@ -31,11 +32,12 @@ namespace Services.EFCore
             if (user != null)
             {
                 var userClaims = await _userManager.GetClaimsAsync(user);
+                var roles = await _userManager.GetRolesAsync(user);
                 var roleClaims = new List<Claim>();
-                foreach (var role in user.UserRoles)
+                foreach (var roleName in roles)
                 {
-                    var roleEntity = await _roleManager.FindByIdAsync(role.RoleId);
-                    if(roleEntity is not null)
+                    var roleEntity = await _roleManager.FindByNameAsync(roleName);
+                    if (roleEntity is not null)
                     {
                         var claims = await _roleManager.GetClaimsAsync(roleEntity);
                         roleClaims.AddRange(claims);
