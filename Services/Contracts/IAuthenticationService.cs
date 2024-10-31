@@ -37,5 +37,6 @@ namespace Services.Contracts
         Task<List<UwingoUser>> GetAllUsersByCompanyApplicationId(Guid companyId, Guid applicationId);
         Task<UwingoUser> GetAdminId(Guid companyId, Guid applicationId);
         Task<Role> GetAdminRoleId(Guid companyId, Guid applicationId);
+        Task<int> GetAllUserCountByCompanyApplicationId(Guid companyId, Guid applicationId);
     }
 }

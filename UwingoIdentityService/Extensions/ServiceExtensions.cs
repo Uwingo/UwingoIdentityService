@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Infrastructure;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using RapositoryAppClient;
 using Repositories;
@@ -42,24 +43,61 @@ namespace UwingoIdentityService.Extensions
             services.Configure<SmtpSettings>(configuration.GetSection("SmtpSettings"));
         }
 
+        //public static void ConfigureIdentity(this IServiceCollection services)
+        //{
+        //    services.AddIdentity<User, Role>
+        //        (
+        //            opts =>
+        //            {
+        //                opts.Password.RequireDigit = true;
+        //                opts.Password.RequireLowercase = true;
+        //                opts.Password.RequireUppercase = true;
+        //                opts.Password.RequireNonAlphanumeric = true;
+        //                opts.Password.RequiredLength = 8;
+
+        //                opts.User.RequireUniqueEmail = true;
+        //                opts.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultEmailProvider;
+
+        //            }
+        //        )
+        //        .AddDefaultTokenProviders()
+        //        .AddEntityFrameworkStores<RepositoryContext>();
+        //}
+
         public static void ConfigureIdentity(this IServiceCollection services)
         {
-            var builder = services.AddIdentity<User, Role>
-                (
-                    opts =>
-                    {
-                        opts.Password.RequireDigit = true;
-                        opts.Password.RequireLowercase = true;
-                        opts.Password.RequireUppercase = true;
-                        opts.Password.RequireNonAlphanumeric = true;
-                        opts.Password.RequiredLength = 8;
+            // RepositoryContext için Identity yapılandırması
+            services.AddIdentity<User, Role>(opts =>
+            {
+                opts.Password.RequireDigit = true;
+                opts.Password.RequireLowercase = true;
+                opts.Password.RequireUppercase = true;
+                opts.Password.RequireNonAlphanumeric = true;
+                opts.Password.RequiredLength = 8;
+                opts.User.RequireUniqueEmail = true;
+                opts.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+            })
+            .AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider)
+            .AddEntityFrameworkStores<RepositoryContext>()
+            .AddDefaultTokenProviders();
 
-                        opts.User.RequireUniqueEmail = true;
-
-                    }
-                ).AddEntityFrameworkStores<RepositoryContext>()
-                .AddDefaultTokenProviders();
+            // RepositoryContextAppClient için bağımsız Identity yapılandırması
+            services.AddIdentityCore<UwingoUser>(opts =>
+            {
+                opts.Password.RequireDigit = true;
+                opts.Password.RequireLowercase = true;
+                opts.Password.RequireUppercase = true;
+                opts.Password.RequireNonAlphanumeric = true;
+                opts.Password.RequiredLength = 8;
+                opts.User.RequireUniqueEmail = true;
+                opts.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+            })
+            .AddTokenProvider<DataProtectorTokenProvider<UwingoUser>>(TokenOptions.DefaultProvider)
+            .AddEntityFrameworkStores<RepositoryContextAppClient>()
+            .AddDefaultTokenProviders();
         }
+
+
 
         public static void ConfigureServices(this IServiceCollection services)
         {
@@ -96,7 +134,7 @@ namespace UwingoIdentityService.Extensions
             //services.AddScoped<IUserRoleService, UserRoleService>();
             services.AddScoped<IAuthenticationService, AuthenticationService>();
             services.AddTransient<IEmailService, EmailService>();
-            
+
         }
 
         public static void ConfigureJWT(this IServiceCollection services, IConfiguration configuration)
@@ -133,10 +171,10 @@ namespace UwingoIdentityService.Extensions
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey)),
                     ClockSkew = TimeSpan.FromMinutes(Convert.ToDouble(jwtSettings.GetSection("Expire").Value))
                 }
-                
+
             );
             var asd = data;
-            
+
         }
 
         public static void ConfigureAuthorizationPolicies(this IServiceCollection services)

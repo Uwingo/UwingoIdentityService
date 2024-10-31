@@ -119,21 +119,21 @@ namespace Repositories.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "b8ce8747-e5ac-4071-b4ff-0db1b3e1608b",
+                            Id = "cf2d1c3e-979c-4f2d-a0db-717d89d47e7b",
                             Description = "Uygulama Kullanıcısı",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "0b91dfe7-d2b1-4d7f-a0e4-383daaeb2d7a",
+                            Id = "247c5feb-37ef-41a8-97f5-504b5cceed31",
                             Description = "Yönetici (Uwingo) Admin",
                             Name = "Admin",
                             NormalizedName = "ADMIN"
                         },
                         new
                         {
-                            Id = "713cba6d-f189-4962-bd17-3930e082aa6a",
+                            Id = "66a074d2-2f55-468a-9ca6-4079edd6683f",
                             Description = "Kiracı Admini",
                             Name = "TenantAdmin",
                             NormalizedName = "TENANTADMIN"
@@ -267,6 +267,10 @@ namespace Repositories.Migrations
 
                     b.Property<Guid>("CompanyApplicationId")
                         .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UserId")
                         .IsRequired()

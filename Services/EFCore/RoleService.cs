@@ -127,6 +127,18 @@ namespace Services.EFCore
             }
         }
 
+        public async Task<int> GetAllRolesByCompanyApplicationId(Guid companyId, Guid applicationId)
+        {
+            string dbString = _repository.CompanyApplication.GetCompanyApplicationByApplicationAndCompanyId(companyId, applicationId, false).DbConnection;
+
+            var context = await ChangeDatabase(dbString);
+            var roleManager = CreateRoleManager(context);
+
+            var roleCount = roleManager.Roles.Count();
+
+            return roleCount;
+        }
+
         public IEnumerable<RoleDto> GetPaginatedRoles(RequestParameters parameters, bool trackChanges)
         {
             try

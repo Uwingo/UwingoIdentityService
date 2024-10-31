@@ -252,6 +252,40 @@ namespace API.Controllers
         }
 
         #endregion
+        #region UpdateUserProfile
+        [HttpPut("UpdateUserProfile")]
+        public async Task<IActionResult> UpdateUserProfile([FromBody] UserDto updatedUser)
+        {
+            try
+            {
+                var user = await _authService.GetUserByIdAsync(updatedUser.Id);
+                if (user == null)
+                {
+                    _logger.LogError("Kullanıcı bulunamadı.");
+                    return NotFound("Kullanıcı bulunamadı.");
+                }
+
+                var result = await _authService.UpdateUser(updatedUser);
+
+                if (result.Succeeded)
+                {
+                    _logger.LogInformation("Kullanıcı başarıyla güncellendi.");
+                    return Ok("Kullanıcı başarıyla güncellendi.");
+                }
+                else
+                {
+                    _logger.LogError("Kullanıcı güncellenirken bir hata oluştu.");
+                    return BadRequest("Kullanıcı güncellenirken bir hata oluştu.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError($"Kullanıcı güncellenirken bir hata oluştu: {ex.Message}");
+                return StatusCode(500, "Internal server error");
+            }
+        }
+
+        #endregion
         #region ChangePassword
         [HttpPut("ChangePassword")]
         public async Task<IActionResult> ChangePassword([FromBody] ChangePasswordDto passwordDto)
@@ -327,12 +361,28 @@ namespace API.Controllers
         #region GetUserCount
         [HttpGet("GetUserCount")]
         [Authorize(Policy = "GetUserCount")]
-        public IActionResult GetUserCount()
+        public async Task<IActionResult> GetUserCount([FromQuery] Guid companyId, [FromQuery] Guid applicationId)
         {
-            int userCount = _authService.GetUserCount();
-            return Ok(userCount);
+            try
+            {
+                // Eğer companyId ve applicationId geçerliyse, Kullanıcı sayısını almak için gerekli işlemleri yap
+                if (!(companyId == Guid.Empty) && !(applicationId == Guid.Empty))
+                {
+                    // Kullanıcı sayısını, companyId ve applicationId'ye göre filtreleyerek almak için gerekli methodu çağır
+                    var userCount = await _authService.GetAllUserCountByCompanyApplicationId(companyId, applicationId);
+                    _logger.LogInformation("Kullanıcı sayısı çekildi: {Count}", userCount);
+                    return Ok(userCount);
+                }
+                else return BadRequest("Kullanıcı sayısı çekilirken bir hata oluştu.");
+
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError("Kullanıcı sayısı çekilirken bir hata oluştu: {Message}", ex.Message);
+                return StatusCode(500, "Internal server error");
+            }
         }
-        #endregion
+        #endregion  
         #region AddRoleClaim
         [HttpPost("AddRoleClaim")]
         public async Task<IActionResult> AddRoleClaim(string roleId, string claimType, string claimValue)
@@ -432,14 +482,23 @@ namespace API.Controllers
         [HttpPost("ForgotPassword")]
         public async Task<IActionResult> ForgotPassword(EmailDto email)
         {
-            if (string.IsNullOrEmpty(email.Email))
-                return BadRequest("E-posta adresi gerekli.");
+            try
+            {
+                if (string.IsNullOrEmpty(email.Email))
+                    return BadRequest("E-posta adresi gerekli.");
 
-            var result = await _authService.ForgotPasswordAsync(email.Email);
-            if (!result)
-                return NotFound("Kullanıcı bulunamadı.");
+                var result = await _authService.ForgotPasswordAsync(email.Email);
+                if (!result)
+                    return NotFound("Kullanıcı bulunamadı.");
 
-            return Ok("Şifre sıfırlama e-postası gönderildi.");
+                return Ok("Şifre sıfırlama e-postası gönderildi.");
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+            
         }
 
         #endregion

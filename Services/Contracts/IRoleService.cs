@@ -15,5 +15,6 @@ namespace Services.Contracts
         Task<RoleDto> CreateRole(RoleDto roleDto);
         Task UpdateRole(RoleDto roleDto);
         Task DeleteRole(string id);
+        Task<int> GetAllRolesByCompanyApplicationId(Guid companyId, Guid applicationId);
     }
 }

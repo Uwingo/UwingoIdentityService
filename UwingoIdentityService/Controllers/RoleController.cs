@@ -165,13 +165,20 @@ namespace Presentation.Controllers
 
         [Authorize(Policy = "GetRoleCount")]
         [HttpGet("GetRoleCount")]
-        public async Task<IActionResult> GetRoleCount()
+        public async Task<IActionResult> GetRoleCount([FromQuery] Guid companyId, [FromQuery] Guid applicationId)
         {
             try
             {
-                var roleCount = _roleService.GetAllRoles().Count();
-                _logger.LogInformation("Rol sayısı çekildi");
-                return Ok(roleCount);
+                // Eğer companyId ve applicationId geçerliyse, rol sayısını almak için gerekli işlemleri yap
+                if (!(companyId == Guid.Empty) && !(applicationId == Guid.Empty))
+                {
+                    // Rol sayısını, companyId ve applicationId'ye göre filtreleyerek almak için gerekli methodu çağır
+                    var roleCount = await _roleService.GetAllRolesByCompanyApplicationId(companyId, applicationId);
+                    _logger.LogInformation("Rol sayısı çekildi: {Count}", roleCount);
+                    return Ok(roleCount);
+                }
+                else return BadRequest("Rol sayısı çekilirken bir hata oluştu.");
+                
             }
             catch (Exception ex)
             {
@@ -179,5 +186,6 @@ namespace Presentation.Controllers
                 return StatusCode(500, "Internal server error");
             }
         }
+
     }
 }

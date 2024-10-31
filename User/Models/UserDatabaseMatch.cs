@@ -18,5 +18,6 @@ namespace Entity.Models
         public Guid CompanyApplicationId { get; set; }
         public CompanyApplication CompanyApplication { get; set; }
         public string UserName { get; set; }
+        public string Email { get; set; }
     }
 }

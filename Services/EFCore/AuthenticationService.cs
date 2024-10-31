@@ -50,7 +50,7 @@ namespace Services.EFCore
         {
             try
             {
-                var role = await _roleManager.FindByIdAsync(userRegistrationDto.RoleId);
+
                 var user = _mapper.Map<User>(userRegistrationDto);
                 user.RefreshToken = GenerateRefreshToken();
                 user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
@@ -61,6 +61,9 @@ namespace Services.EFCore
                 var newContext = await ChangeDatabase(connectionString);
 
                 var userManagerAppClient = CreateUserManager(newContext);
+                var roleManager = CreateRoleManager(newContext);
+
+                var role = await roleManager.FindByIdAsync(userRegistrationDto.RoleId);
 
                 UwingoUser user2 = new UwingoUser();
                 user2.Email = user.Email;
@@ -81,16 +84,18 @@ namespace Services.EFCore
                     {
                         CompanyApplicationId = userRegistrationDto.CompanyApplicationId,
                         UserId = user2.Id,
-                        UserName = user2.UserName
+                        UserName = user2.UserName,
+                        Email = user2.Email,
+                        Id = Guid.NewGuid()
                     };
                     _repo.UserDbMatch.GenericCreate(userDbMatch);
-                    _logger.LogInformation("Kullanıcı (Admin olmayan) başarıyla kaydedildi ve role atandı.");
+                    _repo.Save();
+                    _logger.LogInformation("Kullanıcı başarıyla kaydedildi ve role atandı.");
                 }
                 else
                 {
-                    _logger.LogError("Kullanıcı (Admin olmayan) kaydı başarısız.");
+                    _logger.LogError("Kullanıcı kaydı başarısız.");
                 }
-                //}
 
                 return result;
             }
@@ -332,6 +337,16 @@ namespace Services.EFCore
 
             var users = userManager.Users.ToList();
             var usersDto = _mapper.Map<List<UwingoUserDto>>(users);
+
+            foreach (var userDto in usersDto)
+            {
+                var user = users.FirstOrDefault(u => u.Id == userDto.Id);
+                if (user != null)
+                {
+                    var roles = await userManager.GetRolesAsync(user);
+                    userDto.IsAdmin = roles.Contains("Admin");
+                }
+            }
 
             return usersDto;
         }
@@ -764,6 +779,18 @@ namespace Services.EFCore
             return userCount;
         }
 
+        public async Task<int> GetAllUserCountByCompanyApplicationId(Guid companyId, Guid applicationId)
+        {
+            string dbString = _repo.CompanyApplication.GetCompanyApplicationByApplicationAndCompanyId(companyId, applicationId, false).DbConnection;
+
+            var context = await ChangeDatabase(dbString);
+            var userManager = CreateUserManager(context);
+
+            var userCount = userManager.Users.Count();
+
+            return userCount;
+        }
+
         public List<User> GetAllUsers()
         {
             var users = _userManager
@@ -809,14 +836,6 @@ namespace Services.EFCore
 
             return roles;
         }
-
-        //public List<UserDto> GetPaginatedUsers(RequestParameters parameters, bool trackChanges)
-        //{
-        //    var users = _repo.User.GetPagedUsers(parameters, trackChanges);
-        //    var usersDto = _mapper.Map<List<UserDto>>(users);
-
-        //    return usersDto;
-        //}
 
         public async Task<List<UserDto>> GetPaginatedUsers(RequestParameters parameters, bool trackChanges)
         {
@@ -1019,30 +1038,124 @@ namespace Services.EFCore
         }
 
 
+        //public async Task<bool> ForgotPasswordAsync(string email)
+        //{
+        //    Guid companyApplicationId = _repo.UserDbMatch.GetUsersCAIdByEmail(email, false);
+
+        //    var user = await _userManager.FindByEmailAsync(email);
+        //    if (user == null)
+        //    {
+        //        _logger.LogWarning("Kullanıcı bulunamadı.");
+        //        return false;
+        //    }
+
+        //    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+        //    var encodedToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(token));
+        //    var resetUrl = $"https://78.111.111.81:5080/Authentication/ResetPassword?token={encodedToken}&email={user.Email}";
+
+        //    var subject = "Şifre Sıfırlama Talebi";
+        //    var message = $"Lütfen <a href='{resetUrl}'>buraya tıklayarak</a> şifrenizi sıfırlayın.";
+
+        //    await _emailService.SendEmailAsync(user.Email, subject, message);
+
+        //    return true;
+        //}
+
+        //public async Task<IdentityResult> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
+        //{
+        //    var user = await _userManager.FindByEmailAsync(resetPasswordDto.Email);
+        //    if (user == null)
+        //    {
+        //        _logger.LogWarning("Kullanıcı bulunamadı.");
+        //        return IdentityResult.Failed(new IdentityError { Description = "Kullanıcı bulunamadı." });
+        //    }
+
+        //    var decodedToken = Encoding.UTF8.GetString(Convert.FromBase64String(resetPasswordDto.Token));
+
+        //    var resetPassResult = await _userManager.ResetPasswordAsync(user, decodedToken, resetPasswordDto.NewPassword);
+        //    if (!resetPassResult.Succeeded)
+        //    {
+        //        foreach (var error in resetPassResult.Errors)
+        //        {
+        //            _logger.LogError($"Şifre sıfırlama hatası: {error.Description}");
+        //        }
+        //        return resetPassResult;
+        //    }
+
+        //    return IdentityResult.Success;
+        //}
+
+        //public async Task<IdentityResult> ChangePassword(User user, string currentPassword, string newPassword)
+        //{
+        //    var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
+        //    if (result.Succeeded) return IdentityResult.Success;
+        //    else return IdentityResult.Failed();
+        //}   
+
         public async Task<bool> ForgotPasswordAsync(string email)
         {
-            var user = await _userManager.FindByEmailAsync(email);
-            if (user == null)
+            try
             {
-                _logger.LogWarning("Kullanıcı bulunamadı.");
-                return false;
+                Guid caId = _repo.UserDbMatch.GetUsersCAIdByEmail(email, false);
+                var companyApplication = _repo.CompanyApplication.GetCompanyApplication(caId, false);
+                var dbString = companyApplication?.DbConnection;
+
+                if (string.IsNullOrEmpty(dbString))
+                {
+                    _logger.LogWarning("Veritabanı bağlantı dizesi alınamadı.");
+                    return false;
+                }
+
+                var context = await ChangeDatabase(dbString);
+                var userManager = CreateUserManager(context);
+
+                var user = await userManager.FindByEmailAsync(email);
+                if (user == null)
+                {
+                    _logger.LogWarning("Kullanıcı bulunamadı.");
+                    return false;
+                }
+
+                //var tokenProvider = context is RepositoryContextAppClient ? "AppClientResetTokenProvider" : "RepoContextResetTokenProvider";
+                //var token = await userManager.GenerateUserTokenAsync(user, tokenProvider, "ResetPassword");
+
+                //var token = await userManager.GenerateUserTokenAsync(user, TokenOptions.DefaultProvider, "ResetPassword");
+                var token = await userManager.GeneratePasswordResetTokenAsync(user);
+
+                var encodedToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(token));
+                var resetUrl = $"https://78.111.111.81:5080/Authentication/ResetPassword?token={encodedToken}&email={user.Email}";
+
+                var subject = "Şifre Sıfırlama Talebi";
+                var message = $"Lütfen <a href='{resetUrl}'>buraya tıklayarak</a> şifrenizi sıfırlayın.";
+
+                await _emailService.SendEmailAsync(user.Email, subject, message);
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                var result = ex.Message;
+                throw;
             }
 
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var encodedToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(token));
-            var resetUrl = $"https://localhost:7197/Authentication/ResetPassword?token={encodedToken}&email={user.Email}";
-
-            var subject = "Şifre Sıfırlama Talebi";
-            var message = $"Lütfen <a href='{resetUrl}'>buraya tıklayarak</a> şifrenizi sıfırlayın.";
-
-            await _emailService.SendEmailAsync(user.Email, subject, message);
-
-            return true;
         }
 
         public async Task<IdentityResult> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
         {
-            var user = await _userManager.FindByEmailAsync(resetPasswordDto.Email);
+            Guid caId = _repo.UserDbMatch.GetUsersCAIdByEmail(resetPasswordDto.Email, false);
+            var companyApplication = _repo.CompanyApplication.GetCompanyApplication(caId, false);
+            var dbString = companyApplication?.DbConnection;
+
+            if (string.IsNullOrEmpty(dbString))
+            {
+                _logger.LogWarning("Veritabanı bağlantı dizesi alınamadı.");
+                return IdentityResult.Failed(new IdentityError { Description = "Veritabanı bağlantı dizesi alınamadı." });
+            }
+
+            var context = await ChangeDatabase(dbString);
+            var userManager = CreateUserManager(context);
+
+            var user = await userManager.FindByEmailAsync(resetPasswordDto.Email);
             if (user == null)
             {
                 _logger.LogWarning("Kullanıcı bulunamadı.");
@@ -1050,25 +1163,50 @@ namespace Services.EFCore
             }
 
             var decodedToken = Encoding.UTF8.GetString(Convert.FromBase64String(resetPasswordDto.Token));
-
-            var resetPassResult = await _userManager.ResetPasswordAsync(user, decodedToken, resetPasswordDto.NewPassword);
+            var resetPassResult = await userManager.ResetPasswordAsync(user, decodedToken, resetPasswordDto.NewPassword);
             if (!resetPassResult.Succeeded)
             {
                 foreach (var error in resetPassResult.Errors)
                 {
                     _logger.LogError($"Şifre sıfırlama hatası: {error.Description}");
                 }
-                return resetPassResult;
             }
 
-            return IdentityResult.Success;
+            return resetPassResult;
         }
 
-        public async Task<IdentityResult> ChangePassword(User user, string currentPassword, string newPassword)
+        public async Task<IdentityResult> ChangePassword(User user2, string currentPassword, string newPassword)
         {
-            var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
-            if (result.Succeeded) return IdentityResult.Success;
-            else return IdentityResult.Failed();
+            Guid caId = _repo.UserDbMatch.GetUsersCAIdByEmail(user2.Email, false);
+            var companyApplication = _repo.CompanyApplication.GetCompanyApplication(caId, false);
+            var dbString = companyApplication?.DbConnection;
+
+            if (string.IsNullOrEmpty(dbString))
+            {
+                _logger.LogWarning("Veritabanı bağlantı dizesi alınamadı.");
+                return IdentityResult.Failed(new IdentityError { Description = "Veritabanı bağlantı dizesi alınamadı." });
+            }
+
+            var context = await ChangeDatabase(dbString);
+            var userManager = CreateUserManager(context);
+
+            var user = await userManager.FindByEmailAsync(user2.Email);
+            if (user == null)
+            {
+                _logger.LogWarning("Kullanıcı bulunamadı.");
+                return IdentityResult.Failed(new IdentityError { Description = "Kullanıcı bulunamadı." });
+            }
+
+            var result = await userManager.ChangePasswordAsync(user, currentPassword, newPassword);
+            if (!result.Succeeded)
+            {
+                foreach (var error in result.Errors)
+                {
+                    _logger.LogError($"Şifre değiştirme hatası: {error.Description}");
+                }
+            }
+
+            return result;
         }
     }
 }

@@ -1,5 +1,9 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using Entity.Models;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using RapositoryAppClient;
+using Repositories;
 using Repositories.AutoMapper;
 using Serilog;
 using Serilog.Events;
@@ -20,7 +24,6 @@ builder.Services.ConfigureDbContextAppClient(builder.Configuration);
 //builder.Services.ConfigureMyJsonSerializer();
 builder.Services.AddAutoMapper(typeof(MappingProfile));
 
-
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
@@ -32,46 +35,6 @@ if (!Directory.Exists(logDirectory))
 {
     Directory.CreateDirectory(logDirectory);
 }
-
-//builder.Services.AddCors(options =>
-//{
-//    options.AddPolicy("CanApplicationEditPolicy", builder =>
-//        builder.AllowAnyOrigin()
-//               .AllowAnyMethod()
-//               .AllowAnyHeader());
-//});
-
-
-
-
-builder.Services.AddSwaggerGen(c => {
-    c.SwaggerDoc("v1", new OpenApiInfo
-    {
-        Title = "JWTToken_Auth_API",
-        Version = "v1"
-    });
-    c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme()
-    {
-        Name = "Authorization",
-        Type = SecuritySchemeType.ApiKey,
-        Scheme = "Bearer",
-        BearerFormat = "JWT",
-        In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme. \r\n\r\n Enter 'Bearer' [space] and then your token in the text input below.\r\n\r\nExample: \"Bearer 1safsfsdfdfd\"",
-    });
-    c.AddSecurityRequirement(new OpenApiSecurityRequirement {
-        {
-            new OpenApiSecurityScheme {
-                Reference = new OpenApiReference {
-                    Type = ReferenceType.SecurityScheme,
-                        Id = "Bearer"
-                }
-            },
-            new string[] {}
-        }
-    });
-});
-
 
 
 // Serilog yapılandırması
@@ -91,16 +54,6 @@ builder.Services.AddControllers();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
-
-
-//app.UseCors("CanApplicationEditPolicy");
-
 app.UseHttpsRedirection();
 app.UseRouting();
 
@@ -108,5 +61,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+//app.Urls.Add("http://0.0.0.0:5137");
 
 app.Run();

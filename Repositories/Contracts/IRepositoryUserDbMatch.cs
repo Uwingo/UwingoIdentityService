@@ -12,6 +12,7 @@ namespace Repositories.Contracts
         UserDatabaseMatch GetUserDbMatch(string userId, bool trackChanges);
         Guid GetUsersCompanyApplicationId(string userId, bool trackChanges);
         Guid GetUsersCAIdByUserName(string userName, bool trackChanges);
+        Guid GetUsersCAIdByEmail(string email, bool trackChanges);
 
     }
 }

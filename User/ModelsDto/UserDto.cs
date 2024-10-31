@@ -15,5 +15,6 @@ namespace Entity.ModelsDto
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
         public Guid CompanyApplicationId { get; set; }
+        public bool IsAdmin { get; set; }
     }
 }
