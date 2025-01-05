@@ -36,34 +36,6 @@ namespace Services.EFCore
             // Check if the required claim is present
             return claims.Any(c => c.Type == claimType && c.Value == claimValue);
         }
-        //public async Task<IEnumerable<CustomRequirement>> GetCustomRequirementsAsync()
-        //{
-        //    var requirements = new List<CustomRequirement>();
-
-        //    var roles = _roleManager.Roles.ToList(); // Fetch all roles
-        //    var users = _userManager.Users.ToList();
-
-        //    foreach (var role in roles)
-        //    {
-        //        // Get the claims associated with the role
-        //        var roleClaims = await _roleManager.GetClaimsAsync(role);
-        //        foreach (var claim in roleClaims)
-        //        {
-        //            requirements.Add(new CustomRequirement(claim.Type, claim.Value));
-        //        }
-        //    }
-
-        //    foreach (var user in users)
-        //    {
-        //        var userClaims = await _userManager.GetClaimsAsync(user);
-        //        foreach (var claim in userClaims)
-        //        {
-        //            requirements.Add(new CustomRequirement(claim.Type, claim.Value));
-        //        }
-        //    }
-
-        //    return requirements;
-        //}
 
         public async Task<IEnumerable<CustomRequirement>> GetCustomRequirementsAsync()
         {

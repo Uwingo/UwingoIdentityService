@@ -1,0 +1,1870 @@
+2024-11-27 12:30:01.088 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-27 12:30:02.649 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:02.771 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:02.978 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:03.013 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:03.043 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:03.076 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:03.119 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:03.150 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:03.180 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:03.211 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:03.333 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-27 12:30:03.529 +03:00 [INF] Now listening on: http://localhost:5137
+2024-11-27 12:30:03.531 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-27 12:30:03.531 +03:00 [INF] Hosting environment: Development
+2024-11-27 12:30:03.531 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-11-27 12:30:05.069 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api - -
+2024-11-27 12:30:05.221 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-11-27 12:30:05.315 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api - - - 404 0 - 249.6715ms
+2024-11-27 12:30:13.058 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompaniesForLogin - -
+2024-11-27 12:30:13.066 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAllCompaniesForLogin (UwingoIdentityService)'
+2024-11-27 12:30:13.087 +03:00 [INF] Route matched with {action = "GetAllCompaniesForLogin", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompaniesForLogin() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:30:13.310 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:30:13.315 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:30:13.316 +03:00 [INF] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:30:13.326 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.CompanyDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:30:13.390 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAllCompaniesForLogin (UwingoIdentityService) in 296.7473ms
+2024-11-27 12:30:13.391 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAllCompaniesForLogin (UwingoIdentityService)'
+2024-11-27 12:30:13.397 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompaniesForLogin - - - 200 - application/json;+charset=utf-8 338.2225ms
+2024-11-27 12:30:13.400 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplicationsForLogin - -
+2024-11-27 12:30:13.404 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplicationsForLogin (UwingoIdentityService)'
+2024-11-27 12:30:13.409 +03:00 [INF] Route matched with {action = "GetAllApplicationsForLogin", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplicationsForLogin() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:30:13.493 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:30:13.495 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-11-27 12:30:13.496 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:30:13.498 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplicationsForLogin (UwingoIdentityService) in 88.549ms
+2024-11-27 12:30:13.498 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplicationsForLogin (UwingoIdentityService)'
+2024-11-27 12:30:13.499 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplicationsForLogin - - - 200 - application/json;+charset=utf-8 99.1853ms
+2024-11-27 12:30:16.197 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - -
+2024-11-27 12:30:16.197 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:30:16.206 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:30:16.261 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:30:16.263 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:30:16.302 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:30:16.335 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:30:16.367 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:30:16.368 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:30:16.369 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 162.172ms
+2024-11-27 12:30:16.369 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:30:16.369 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - - - 200 - application/json;+charset=utf-8 172.1603ms
+2024-11-27 12:30:19.499 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5137/api/Authentication/login application/json;+charset=utf-8 -
+2024-11-27 12:30:19.500 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.Login (UwingoIdentityService)'
+2024-11-27 12:30:19.505 +03:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Entity.ModelsDto.UserLoginDto) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:30:19.586 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:30:19.672 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-11-27 12:30:19.762 +03:00 [INF] Kullanıcı başarıyla doğrulandı ve veritabanı bağlantısı sağlandı.
+2024-11-27 12:30:19.808 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CompanyApplicationId], [u].[Email], [u].[UserId], [u].[UserName]
+FROM [UserDatabaseMatches] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2024-11-27 12:30:19.841 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[Id] = @__id_0
+2024-11-27 12:30:20.136 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__roleId_0
+2024-11-27 12:30:20.172 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:20.265 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-11-27 12:30:20.316 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-11-27 12:30:20.496 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@p19='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p20='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CompanyApplicationId] = @p1, [ConcurrencyStamp] = @p2, [Email] = @p3, [EmailConfirmed] = @p4, [FirstName] = @p5, [LastName] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [NormalizedEmail] = @p9, [NormalizedUserName] = @p10, [PasswordHash] = @p11, [PhoneNumber] = @p12, [PhoneNumberConfirmed] = @p13, [RefreshToken] = @p14, [RefreshTokenExpiryTime] = @p15, [SecurityStamp] = @p16, [TwoFactorEnabled] = @p17, [UserName] = @p18
+OUTPUT 1
+WHERE [Id] = @p19 AND [ConcurrencyStamp] = @p20;
+2024-11-27 12:30:20.643 +03:00 [ERR] Token başarıyla oluşturuldu.
+2024-11-27 12:30:20.644 +03:00 [INF] Kullanıcı başarıyla giriş yaptı.
+2024-11-27 12:30:20.648 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entity.ModelsDto.TokenDto'.
+2024-11-27 12:30:20.652 +03:00 [INF] Executed action API.Controllers.AuthenticationController.Login (UwingoIdentityService) in 1147.083ms
+2024-11-27 12:30:20.652 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.Login (UwingoIdentityService)'
+2024-11-27 12:30:20.654 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5137/api/Authentication/login application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1154.4736ms
+2024-11-27 12:30:20.708 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/GetClaims/adminIdentity - -
+2024-11-27 12:30:20.787 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.GetClaims (UwingoIdentityService)'
+2024-11-27 12:30:20.791 +03:00 [INF] Route matched with {action = "GetClaims", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetClaims(System.String) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:30:20.834 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:20.866 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CompanyApplicationId], [u].[Email], [u].[UserId], [u].[UserName]
+FROM [UserDatabaseMatches] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2024-11-27 12:30:20.897 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[Id] = @__id_0
+2024-11-27 12:30:21.079 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__roleId_0
+2024-11-27 12:30:21.112 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.147 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Security.Claims.Claim, System.Security.Claims, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2024-11-27 12:30:21.153 +03:00 [INF] Executed action API.Controllers.AuthenticationController.GetClaims (UwingoIdentityService) in 362.1181ms
+2024-11-27 12:30:21.153 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.GetClaims (UwingoIdentityService)'
+2024-11-27 12:30:21.154 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/GetClaims/adminIdentity - - - 200 - application/json;+charset=utf-8 445.4939ms
+2024-11-27 12:30:21.188 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetCompanyCount - -
+2024-11-27 12:30:21.273 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:21.305 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:21.335 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.367 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.402 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.440 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.470 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:21.499 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:21.529 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:21.559 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:21.604 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:21.635 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:21.674 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:21.709 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:21.740 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.746 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetCompanyCount (UwingoIdentityService)'
+2024-11-27 12:30:21.750 +03:00 [INF] Route matched with {action = "GetCompanyCount", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyCount() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:30:21.783 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:30:21.783 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:30:21.784 +03:00 [INF] Şirket sayısı çekildi
+2024-11-27 12:30:21.784 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:30:21.787 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetCompanyCount (UwingoIdentityService) in 37.3255ms
+2024-11-27 12:30:21.788 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetCompanyCount (UwingoIdentityService)'
+2024-11-27 12:30:21.788 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetCompanyCount - - - 200 - application/json;+charset=utf-8 600.1392ms
+2024-11-27 12:30:21.801 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetApplicationCount - -
+2024-11-27 12:30:21.836 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:21.869 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:21.900 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.931 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.961 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:21.991 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.020 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.050 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.086 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.116 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.150 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:22.183 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.216 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:22.246 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:22.276 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.277 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetApplicationCount (UwingoIdentityService)'
+2024-11-27 12:30:22.280 +03:00 [INF] Route matched with {action = "GetApplicationCount", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetApplicationCount() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:30:22.312 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:30:22.312 +03:00 [INF] Uygulama sayısı çekildi
+2024-11-27 12:30:22.312 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:30:22.313 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetApplicationCount (UwingoIdentityService) in 32.1109ms
+2024-11-27 12:30:22.313 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetApplicationCount (UwingoIdentityService)'
+2024-11-27 12:30:22.313 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetApplicationCount - - - 200 - application/json;+charset=utf-8 512.3588ms
+2024-11-27 12:30:22.315 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetCompanyApplicationCount - -
+2024-11-27 12:30:22.350 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:22.379 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:22.409 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.439 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.480 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.511 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.541 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.571 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.601 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.631 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.665 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:22.694 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:22.723 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:22.752 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:22.783 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.784 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetCompanyApplicationCount (UwingoIdentityService)'
+2024-11-27 12:30:22.786 +03:00 [INF] Route matched with {action = "GetCompanyApplicationCount", controller = "CompanyApplication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyApplicationCount() on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:30:22.817 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+2024-11-27 12:30:22.818 +03:00 [ERR] Tüm şirket uygulamaları başarıyla getirildi.
+2024-11-27 12:30:22.818 +03:00 [INF] Şirket uygulaması sayısı başarıyla getirildi.
+2024-11-27 12:30:22.818 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:30:22.818 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetCompanyApplicationCount (UwingoIdentityService) in 32.4402ms
+2024-11-27 12:30:22.819 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetCompanyApplicationCount (UwingoIdentityService)'
+2024-11-27 12:30:22.819 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetCompanyApplicationCount - - - 200 - application/json;+charset=utf-8 503.7333ms
+2024-11-27 12:30:22.819 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Role/GetRoleCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - -
+2024-11-27 12:30:22.848 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:22.879 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:22.909 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.939 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:22.970 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.000 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.031 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.059 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.089 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.122 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.152 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:23.182 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.211 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:23.239 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:23.270 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.270 +03:00 [INF] Executing endpoint 'Presentation.Controllers.RoleController.GetRoleCount (UwingoIdentityService)'
+2024-11-27 12:30:23.274 +03:00 [INF] Route matched with {action = "GetRoleCount", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRoleCount(System.Guid, System.Guid) on controller Presentation.Controllers.RoleController (UwingoIdentityService).
+2024-11-27 12:30:23.312 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:30:23.383 +03:00 [INF] Rol sayısı çekildi: 4
+2024-11-27 12:30:23.383 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:30:23.383 +03:00 [INF] Executed action Presentation.Controllers.RoleController.GetRoleCount (UwingoIdentityService) in 108.955ms
+2024-11-27 12:30:23.383 +03:00 [INF] Executed endpoint 'Presentation.Controllers.RoleController.GetRoleCount (UwingoIdentityService)'
+2024-11-27 12:30:23.383 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Role/GetRoleCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - - - 200 - application/json;+charset=utf-8 564.0458ms
+2024-11-27 12:30:23.384 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Tenant/GetTenantCount - -
+2024-11-27 12:30:23.421 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:23.452 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:23.482 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.512 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.541 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.571 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.601 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.631 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.661 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.691 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.723 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:23.752 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:23.781 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:23.810 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:23.840 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:23.841 +03:00 [INF] Executing endpoint 'Presentation.Controllers.TenantController.GetTenantCount (UwingoIdentityService)'
+2024-11-27 12:30:23.844 +03:00 [INF] Route matched with {action = "GetTenantCount", controller = "Tenant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTenantCount() on controller Presentation.Controllers.TenantController (UwingoIdentityService).
+2024-11-27 12:30:23.880 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tenants] AS [t]
+2024-11-27 12:30:23.882 +03:00 [ERR] Tüm kiracılar başarıyla getirildi.
+2024-11-27 12:30:23.882 +03:00 [INF] Kiracı sayısı çekildi
+2024-11-27 12:30:23.882 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:30:23.883 +03:00 [INF] Executed action Presentation.Controllers.TenantController.GetTenantCount (UwingoIdentityService) in 38.3768ms
+2024-11-27 12:30:23.883 +03:00 [INF] Executed endpoint 'Presentation.Controllers.TenantController.GetTenantCount (UwingoIdentityService)'
+2024-11-27 12:30:23.883 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Tenant/GetTenantCount - - - 200 - application/json;+charset=utf-8 498.9444ms
+2024-11-27 12:30:23.884 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUserCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - -
+2024-11-27 12:30:23.915 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:23.944 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:23.975 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:24.004 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:24.033 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:24.063 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:24.094 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:24.123 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:24.152 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:24.182 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:24.214 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:24.243 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:24.273 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:24.303 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:24.334 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:24.334 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.GetUserCount (UwingoIdentityService)'
+2024-11-27 12:30:24.338 +03:00 [INF] Route matched with {action = "GetUserCount", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserCount(System.Guid, System.Guid) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:30:24.371 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:30:24.414 +03:00 [INF] Kullanıcı sayısı çekildi: 4
+2024-11-27 12:30:24.414 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:30:24.415 +03:00 [INF] Executed action API.Controllers.AuthenticationController.GetUserCount (UwingoIdentityService) in 76.9667ms
+2024-11-27 12:30:24.415 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.GetUserCount (UwingoIdentityService)'
+2024-11-27 12:30:24.415 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUserCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - - - 200 - application/json;+charset=utf-8 531.0891ms
+2024-11-27 12:30:31.575 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - -
+2024-11-27 12:30:31.606 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:31.636 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:31.666 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:31.696 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:31.726 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:31.756 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:31.787 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:31.818 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:31.847 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:31.878 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:31.908 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:31.937 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:31.966 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:31.995 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:32.025 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:32.025 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:30:32.028 +03:00 [INF] Route matched with {action = "GetAllCompanies", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:30:32.058 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:30:32.058 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:30:32.058 +03:00 [INF] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:30:32.058 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.CompanyDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:30:32.059 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService) in 30.9353ms
+2024-11-27 12:30:32.059 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:30:32.059 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - - - 200 - application/json;+charset=utf-8 483.7221ms
+2024-11-27 12:30:32.065 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - -
+2024-11-27 12:30:32.095 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:30:32.125 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:30:32.156 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:32.185 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:32.215 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:32.250 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:32.279 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:32.310 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:32.340 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:32.369 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:32.401 +03:00 [INF] Executed DbCommand (29ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:30:32.432 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:30:32.531 +03:00 [INF] Executed DbCommand (98ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:30:32.563 +03:00 [INF] Executed DbCommand (32ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:30:32.595 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:30:32.596 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:30:32.598 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:30:32.628 +03:00 [INF] Executed DbCommand (28ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:30:32.628 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-11-27 12:30:32.629 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:30:32.629 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 30.5395ms
+2024-11-27 12:30:32.629 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:30:32.629 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 564.4277ms
+2024-11-27 12:33:35.135 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-27 12:33:36.922 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:37.036 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:37.244 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:37.287 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:37.367 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:37.416 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:37.472 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:37.526 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:37.584 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:37.633 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:37.744 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-27 12:33:37.855 +03:00 [INF] Now listening on: http://localhost:5137
+2024-11-27 12:33:37.856 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-27 12:33:37.856 +03:00 [INF] Hosting environment: Development
+2024-11-27 12:33:37.856 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-11-27 12:33:37.911 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompaniesForLogin - -
+2024-11-27 12:33:37.928 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-11-27 12:33:37.992 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAllCompaniesForLogin (UwingoIdentityService)'
+2024-11-27 12:33:38.007 +03:00 [INF] Route matched with {action = "GetAllCompaniesForLogin", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompaniesForLogin() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:33:38.241 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:33:38.245 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:33:38.245 +03:00 [INF] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:33:38.252 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.CompanyDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:33:38.299 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAllCompaniesForLogin (UwingoIdentityService) in 288.4128ms
+2024-11-27 12:33:38.299 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAllCompaniesForLogin (UwingoIdentityService)'
+2024-11-27 12:33:38.305 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompaniesForLogin - - - 200 - application/json;+charset=utf-8 395.1277ms
+2024-11-27 12:33:38.308 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplicationsForLogin - -
+2024-11-27 12:33:38.311 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplicationsForLogin (UwingoIdentityService)'
+2024-11-27 12:33:38.315 +03:00 [INF] Route matched with {action = "GetAllApplicationsForLogin", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplicationsForLogin() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:33:38.385 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:33:38.386 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-11-27 12:33:38.387 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:33:38.389 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplicationsForLogin (UwingoIdentityService) in 74.029ms
+2024-11-27 12:33:38.389 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplicationsForLogin (UwingoIdentityService)'
+2024-11-27 12:33:38.390 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplicationsForLogin - - - 200 - application/json;+charset=utf-8 81.4791ms
+2024-11-27 12:33:39.015 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api - -
+2024-11-27 12:33:39.122 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api - - - 404 0 - 107.1915ms
+2024-11-27 12:33:42.858 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - -
+2024-11-27 12:33:42.861 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:33:42.875 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:33:42.943 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:33:42.944 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:33:42.987 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:33:43.043 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:33:43.154 +03:00 [INF] Executed DbCommand (109ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:33:43.155 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:33:43.156 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 280.3538ms
+2024-11-27 12:33:43.156 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:33:43.157 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - - - 200 - application/json;+charset=utf-8 299.1273ms
+2024-11-27 12:33:47.676 +03:00 [INF] Request starting HTTP/1.1 POST http://localhost:5137/api/Authentication/login application/json;+charset=utf-8 -
+2024-11-27 12:33:47.677 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.Login (UwingoIdentityService)'
+2024-11-27 12:33:47.681 +03:00 [INF] Route matched with {action = "Login", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Login(Entity.ModelsDto.UserLoginDto) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:33:47.802 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:33:47.917 +03:00 [INF] Executed DbCommand (69ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-11-27 12:33:48.001 +03:00 [INF] Kullanıcı başarıyla doğrulandı ve veritabanı bağlantısı sağlandı.
+2024-11-27 12:33:48.049 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CompanyApplicationId], [u].[Email], [u].[UserId], [u].[UserName]
+FROM [UserDatabaseMatches] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2024-11-27 12:33:48.118 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[Id] = @__id_0
+2024-11-27 12:33:48.526 +03:00 [INF] Executed DbCommand (84ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__roleId_0
+2024-11-27 12:33:48.571 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:48.673 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-11-27 12:33:48.767 +03:00 [INF] Executed DbCommand (79ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-11-27 12:33:48.987 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[@p19='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (DbType = Guid), @p2='?' (Size = 4000), @p20='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = DateTime2), @p16='?' (Size = 4000), @p17='?' (DbType = Boolean), @p18='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CompanyApplicationId] = @p1, [ConcurrencyStamp] = @p2, [Email] = @p3, [EmailConfirmed] = @p4, [FirstName] = @p5, [LastName] = @p6, [LockoutEnabled] = @p7, [LockoutEnd] = @p8, [NormalizedEmail] = @p9, [NormalizedUserName] = @p10, [PasswordHash] = @p11, [PhoneNumber] = @p12, [PhoneNumberConfirmed] = @p13, [RefreshToken] = @p14, [RefreshTokenExpiryTime] = @p15, [SecurityStamp] = @p16, [TwoFactorEnabled] = @p17, [UserName] = @p18
+OUTPUT 1
+WHERE [Id] = @p19 AND [ConcurrencyStamp] = @p20;
+2024-11-27 12:33:49.119 +03:00 [ERR] Token başarıyla oluşturuldu.
+2024-11-27 12:33:49.120 +03:00 [INF] Kullanıcı başarıyla giriş yaptı.
+2024-11-27 12:33:49.122 +03:00 [INF] Executing OkObjectResult, writing value of type 'Entity.ModelsDto.TokenDto'.
+2024-11-27 12:33:49.125 +03:00 [INF] Executed action API.Controllers.AuthenticationController.Login (UwingoIdentityService) in 1444.4552ms
+2024-11-27 12:33:49.126 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.Login (UwingoIdentityService)'
+2024-11-27 12:33:49.127 +03:00 [INF] Request finished HTTP/1.1 POST http://localhost:5137/api/Authentication/login application/json;+charset=utf-8 - - 200 - application/json;+charset=utf-8 1450.9996ms
+2024-11-27 12:33:49.183 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/GetClaims/adminIdentity - -
+2024-11-27 12:33:49.246 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.GetClaims (UwingoIdentityService)'
+2024-11-27 12:33:49.250 +03:00 [INF] Route matched with {action = "GetClaims", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetClaims(System.String) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:33:49.334 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:49.374 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__userId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[CompanyApplicationId], [u].[Email], [u].[UserId], [u].[UserName]
+FROM [UserDatabaseMatches] AS [u]
+WHERE [u].[UserId] = @__userId_0
+2024-11-27 12:33:49.414 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[Id] = @__id_0
+2024-11-27 12:33:49.693 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__roleId_0
+2024-11-27 12:33:49.772 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:49.827 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[System.Security.Claims.Claim, System.Security.Claims, Version=7.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a]]'.
+2024-11-27 12:33:49.831 +03:00 [INF] Executed action API.Controllers.AuthenticationController.GetClaims (UwingoIdentityService) in 581.2047ms
+2024-11-27 12:33:49.831 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.GetClaims (UwingoIdentityService)'
+2024-11-27 12:33:49.832 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/GetClaims/adminIdentity - - - 200 - application/json;+charset=utf-8 648.1345ms
+2024-11-27 12:33:49.865 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetCompanyCount - -
+2024-11-27 12:33:49.943 +03:00 [INF] Executed DbCommand (69ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:49.993 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:50.058 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:50.110 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:50.181 +03:00 [INF] Executed DbCommand (70ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:50.260 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:50.310 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:50.413 +03:00 [INF] Executed DbCommand (102ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:50.462 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:50.513 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:50.744 +03:00 [INF] Executed DbCommand (212ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:50.803 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:50.856 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:33:50.928 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:33:51.001 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:51.005 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetCompanyCount (UwingoIdentityService)'
+2024-11-27 12:33:51.007 +03:00 [INF] Route matched with {action = "GetCompanyCount", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyCount() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:33:51.058 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:33:51.058 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:33:51.058 +03:00 [INF] Şirket sayısı çekildi
+2024-11-27 12:33:51.059 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:33:51.062 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetCompanyCount (UwingoIdentityService) in 54.7443ms
+2024-11-27 12:33:51.062 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetCompanyCount (UwingoIdentityService)'
+2024-11-27 12:33:51.062 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetCompanyCount - - - 200 - application/json;+charset=utf-8 1197.1060ms
+2024-11-27 12:33:51.074 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetApplicationCount - -
+2024-11-27 12:33:51.169 +03:00 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:51.211 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:51.266 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:51.323 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:51.385 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:51.427 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:51.466 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:51.550 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:51.687 +03:00 [INF] Executed DbCommand (136ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:51.718 +03:00 [INF] Executed DbCommand (30ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:51.777 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:51.818 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:51.886 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:33:52.178 +03:00 [INF] Executed DbCommand (291ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:33:52.223 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:52.225 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetApplicationCount (UwingoIdentityService)'
+2024-11-27 12:33:52.227 +03:00 [INF] Route matched with {action = "GetApplicationCount", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetApplicationCount() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:33:52.277 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:33:52.278 +03:00 [INF] Uygulama sayısı çekildi
+2024-11-27 12:33:52.278 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:33:52.278 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetApplicationCount (UwingoIdentityService) in 51.0272ms
+2024-11-27 12:33:52.278 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetApplicationCount (UwingoIdentityService)'
+2024-11-27 12:33:52.279 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetApplicationCount - - - 200 - application/json;+charset=utf-8 1204.5267ms
+2024-11-27 12:33:52.280 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetCompanyApplicationCount - -
+2024-11-27 12:33:52.322 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:52.358 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:52.396 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:52.460 +03:00 [INF] Executed DbCommand (63ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:52.532 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:52.564 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:52.610 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:52.663 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:52.717 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:52.766 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:52.816 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:52.872 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:52.922 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:33:52.967 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:33:53.022 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:53.023 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetCompanyApplicationCount (UwingoIdentityService)'
+2024-11-27 12:33:53.026 +03:00 [INF] Route matched with {action = "GetCompanyApplicationCount", controller = "CompanyApplication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetCompanyApplicationCount() on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:33:53.062 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+2024-11-27 12:33:53.062 +03:00 [ERR] Tüm şirket uygulamaları başarıyla getirildi.
+2024-11-27 12:33:53.063 +03:00 [INF] Şirket uygulaması sayısı başarıyla getirildi.
+2024-11-27 12:33:53.064 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:33:53.064 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetCompanyApplicationCount (UwingoIdentityService) in 37.3119ms
+2024-11-27 12:33:53.064 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetCompanyApplicationCount (UwingoIdentityService)'
+2024-11-27 12:33:53.064 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetCompanyApplicationCount - - - 200 - application/json;+charset=utf-8 783.5690ms
+2024-11-27 12:33:53.065 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Role/GetRoleCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - -
+2024-11-27 12:33:53.109 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:53.160 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:53.217 +03:00 [INF] Executed DbCommand (57ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:53.284 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:53.325 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:53.384 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:53.447 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:53.489 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:53.658 +03:00 [INF] Executed DbCommand (168ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:53.851 +03:00 [INF] Executed DbCommand (193ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:53.921 +03:00 [INF] Executed DbCommand (68ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:53.988 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:54.038 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:33:54.126 +03:00 [INF] Executed DbCommand (87ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:33:54.291 +03:00 [INF] Executed DbCommand (164ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:54.292 +03:00 [INF] Executing endpoint 'Presentation.Controllers.RoleController.GetRoleCount (UwingoIdentityService)'
+2024-11-27 12:33:54.295 +03:00 [INF] Route matched with {action = "GetRoleCount", controller = "Role"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetRoleCount(System.Guid, System.Guid) on controller Presentation.Controllers.RoleController (UwingoIdentityService).
+2024-11-27 12:33:54.356 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:33:54.489 +03:00 [INF] Rol sayısı çekildi: 4
+2024-11-27 12:33:54.490 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:33:54.490 +03:00 [INF] Executed action Presentation.Controllers.RoleController.GetRoleCount (UwingoIdentityService) in 194.329ms
+2024-11-27 12:33:54.490 +03:00 [INF] Executed endpoint 'Presentation.Controllers.RoleController.GetRoleCount (UwingoIdentityService)'
+2024-11-27 12:33:54.490 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Role/GetRoleCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - - - 200 - application/json;+charset=utf-8 1425.0384ms
+2024-11-27 12:33:54.491 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Tenant/GetTenantCount - -
+2024-11-27 12:33:54.588 +03:00 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:54.641 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:54.798 +03:00 [INF] Executed DbCommand (156ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:54.845 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:54.905 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:54.995 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:55.045 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:55.102 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:55.190 +03:00 [INF] Executed DbCommand (87ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:55.268 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:55.348 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:55.406 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:55.503 +03:00 [INF] Executed DbCommand (96ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:33:55.559 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:33:55.615 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:55.616 +03:00 [INF] Executing endpoint 'Presentation.Controllers.TenantController.GetTenantCount (UwingoIdentityService)'
+2024-11-27 12:33:55.619 +03:00 [INF] Route matched with {action = "GetTenantCount", controller = "Tenant"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetTenantCount() on controller Presentation.Controllers.TenantController (UwingoIdentityService).
+2024-11-27 12:33:55.679 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[Name]
+FROM [Tenants] AS [t]
+2024-11-27 12:33:55.681 +03:00 [ERR] Tüm kiracılar başarıyla getirildi.
+2024-11-27 12:33:55.681 +03:00 [INF] Kiracı sayısı çekildi
+2024-11-27 12:33:55.681 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:33:55.681 +03:00 [INF] Executed action Presentation.Controllers.TenantController.GetTenantCount (UwingoIdentityService) in 61.9288ms
+2024-11-27 12:33:55.681 +03:00 [INF] Executed endpoint 'Presentation.Controllers.TenantController.GetTenantCount (UwingoIdentityService)'
+2024-11-27 12:33:55.682 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Tenant/GetTenantCount - - - 200 - application/json;+charset=utf-8 1190.6665ms
+2024-11-27 12:33:55.683 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUserCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - -
+2024-11-27 12:33:55.730 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:33:55.773 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:33:55.816 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:55.861 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:55.903 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:55.980 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:56.024 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:56.069 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:56.111 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:56.153 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:56.190 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:33:56.223 +03:00 [INF] Executed DbCommand (31ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:33:56.257 +03:00 [INF] Executed DbCommand (33ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:33:56.292 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:33:56.337 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:33:56.337 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.GetUserCount (UwingoIdentityService)'
+2024-11-27 12:33:56.340 +03:00 [INF] Route matched with {action = "GetUserCount", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUserCount(System.Guid, System.Guid) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:33:56.380 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:33:56.450 +03:00 [INF] Kullanıcı sayısı çekildi: 4
+2024-11-27 12:33:56.450 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Int32'.
+2024-11-27 12:33:56.451 +03:00 [INF] Executed action API.Controllers.AuthenticationController.GetUserCount (UwingoIdentityService) in 110.1655ms
+2024-11-27 12:33:56.451 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.GetUserCount (UwingoIdentityService)'
+2024-11-27 12:33:56.451 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUserCount?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9 - - - 200 - application/json;+charset=utf-8 767.9258ms
+2024-11-27 12:34:00.094 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - -
+2024-11-27 12:34:00.135 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:34:00.231 +03:00 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:34:00.294 +03:00 [INF] Executed DbCommand (62ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:00.338 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:00.415 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:00.476 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:00.527 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:00.576 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:00.665 +03:00 [INF] Executed DbCommand (89ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:00.796 +03:00 [INF] Executed DbCommand (130ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:00.865 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:34:00.948 +03:00 [INF] Executed DbCommand (82ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:00.992 +03:00 [INF] Executed DbCommand (43ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:34:01.032 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:34:01.083 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:01.084 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:34:01.087 +03:00 [INF] Route matched with {action = "GetAllCompanies", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:34:01.152 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:34:01.152 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:34:01.152 +03:00 [INF] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:34:01.153 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.CompanyDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:34:01.153 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService) in 66.3535ms
+2024-11-27 12:34:01.153 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:34:01.154 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - - - 200 - application/json;+charset=utf-8 1059.1383ms
+2024-11-27 12:34:01.159 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - -
+2024-11-27 12:34:01.198 +03:00 [INF] Executed DbCommand (37ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:34:01.240 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:34:01.285 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:01.364 +03:00 [INF] Executed DbCommand (78ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:01.425 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:01.472 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:01.527 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:01.578 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:01.633 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:01.681 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:01.750 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:34:01.823 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:01.864 +03:00 [INF] Executed DbCommand (40ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:34:01.909 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:34:01.976 +03:00 [INF] Executed DbCommand (67ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:01.977 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:34:01.980 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:34:02.037 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:34:02.037 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-11-27 12:34:02.038 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:34:02.038 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 57.6282ms
+2024-11-27 12:34:02.038 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:34:02.038 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 878.9489ms
+2024-11-27 12:34:21.356 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - -
+2024-11-27 12:34:21.413 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:34:21.518 +03:00 [INF] Executed DbCommand (104ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:34:21.591 +03:00 [INF] Executed DbCommand (72ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:21.665 +03:00 [INF] Executed DbCommand (73ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:21.736 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:21.802 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:21.849 +03:00 [INF] Executed DbCommand (47ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:21.972 +03:00 [INF] Executed DbCommand (122ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:22.054 +03:00 [INF] Executed DbCommand (81ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:22.115 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:22.172 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:34:22.256 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:22.304 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:34:22.380 +03:00 [INF] Executed DbCommand (76ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:34:22.417 +03:00 [INF] Executed DbCommand (35ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:22.417 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:34:22.417 +03:00 [INF] Route matched with {action = "GetAllCompanies", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:34:22.488 +03:00 [INF] Executed DbCommand (70ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:34:22.488 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:34:22.488 +03:00 [INF] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:34:22.488 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.CompanyDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:34:22.488 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService) in 70.9494ms
+2024-11-27 12:34:22.489 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:34:22.489 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - - - 200 - application/json;+charset=utf-8 1132.6979ms
+2024-11-27 12:34:22.490 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - -
+2024-11-27 12:34:22.562 +03:00 [INF] Executed DbCommand (71ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:34:22.640 +03:00 [INF] Executed DbCommand (77ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:34:22.700 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:22.754 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:22.793 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:22.841 +03:00 [INF] Executed DbCommand (46ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:22.905 +03:00 [INF] Executed DbCommand (64ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:22.950 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:23.016 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:23.066 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:23.117 +03:00 [INF] Executed DbCommand (49ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:34:23.167 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:34:23.213 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:34:23.258 +03:00 [INF] Executed DbCommand (45ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:34:23.311 +03:00 [INF] Executed DbCommand (51ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:34:23.312 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:34:23.313 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:34:23.375 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:34:23.375 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-11-27 12:34:23.376 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:34:23.376 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 62.3389ms
+2024-11-27 12:34:23.376 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:34:23.376 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 886.5673ms
+2024-11-27 12:34:28.277 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/eed11d51-f992-4b90-9f47-c5c3869b1504 - -
+2024-11-27 12:34:28.278 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:34:28.278 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:34:28.342 +03:00 [INF] Executed DbCommand (61ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:34:28.342 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:34:28.343 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-11-27 12:34:28.343 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 65.0137ms
+2024-11-27 12:34:28.343 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:34:28.344 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/eed11d51-f992-4b90-9f47-c5c3869b1504 - - - 404 - application/json;+charset=utf-8 67.0845ms
+2024-11-27 12:34:30.638 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - -
+2024-11-27 12:34:30.639 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:34:30.639 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:34:30.684 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:34:30.684 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:34:30.737 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:34:30.832 +03:00 [INF] Executed DbCommand (94ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:34:30.891 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:34:30.891 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:34:30.892 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 252.3937ms
+2024-11-27 12:34:30.892 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:34:30.892 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - - - 200 - application/json;+charset=utf-8 253.8696ms
+2024-11-27 12:35:08.086 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - -
+2024-11-27 12:35:08.146 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:35:08.200 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:35:08.265 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:08.319 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:08.385 +03:00 [INF] Executed DbCommand (66ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:08.494 +03:00 [INF] Executed DbCommand (108ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:08.547 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:08.974 +03:00 [INF] Executed DbCommand (426ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.014 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.066 +03:00 [INF] Executed DbCommand (52ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.188 +03:00 [INF] Executed DbCommand (120ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:35:09.225 +03:00 [INF] Executed DbCommand (36ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.264 +03:00 [INF] Executed DbCommand (38ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:35:09.323 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:35:09.382 +03:00 [INF] Executed DbCommand (59ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:09.383 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:35:09.383 +03:00 [INF] Route matched with {action = "GetAllCompanies", controller = "Company"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllCompanies() on controller Presentation.Controllers.CompanyController (UwingoIdentityService).
+2024-11-27 12:35:09.417 +03:00 [INF] Executed DbCommand (34ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[Address], [c].[Name], [c].[TenantId]
+FROM [Companies] AS [c]
+2024-11-27 12:35:09.417 +03:00 [ERR] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:35:09.417 +03:00 [INF] Tüm şirketler başarıyla getirildi.
+2024-11-27 12:35:09.417 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.CompanyDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:35:09.418 +03:00 [INF] Executed action Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService) in 34.4171ms
+2024-11-27 12:35:09.418 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyController.GetAllCompanies (UwingoIdentityService)'
+2024-11-27 12:35:09.418 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Company/GetAllCompanies - - - 200 - application/json;+charset=utf-8 1331.9406ms
+2024-11-27 12:35:09.419 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - -
+2024-11-27 12:35:09.459 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-27 12:35:09.558 +03:00 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-27 12:35:09.598 +03:00 [INF] Executed DbCommand (39ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:09.656 +03:00 [INF] Executed DbCommand (58ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:09.698 +03:00 [INF] Executed DbCommand (41ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:09.741 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:09.811 +03:00 [INF] Executed DbCommand (69ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.867 +03:00 [INF] Executed DbCommand (56ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.928 +03:00 [INF] Executed DbCommand (60ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:09.972 +03:00 [INF] Executed DbCommand (44ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:10.027 +03:00 [INF] Executed DbCommand (54ms) [Parameters=[@__userName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[UserName] = @__userName_0
+2024-11-27 12:35:10.118 +03:00 [INF] Executed DbCommand (90ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ClaimType], [a].[ClaimValue], [a].[UserId]
+FROM [AspNetUserClaims] AS [a]
+WHERE [a].[UserId] = @__user_Id_0
+2024-11-27 12:35:10.241 +03:00 [INF] Executed DbCommand (122ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2024-11-27 12:35:10.290 +03:00 [INF] Executed DbCommand (48ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[NormalizedName] = @__normalizedName_0
+2024-11-27 12:35:10.356 +03:00 [INF] Executed DbCommand (65ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-27 12:35:10.357 +03:00 [INF] Executing endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:35:10.357 +03:00 [INF] Route matched with {action = "GetAllApplications", controller = "Application"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAllApplications() on controller UwingoIdentityService.Controllers.ApplicationController (UwingoIdentityService).
+2024-11-27 12:35:10.569 +03:00 [INF] Executed DbCommand (212ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+2024-11-27 12:35:10.569 +03:00 [ERR] Tüm uygulamalar başarıyla getirildi.
+2024-11-27 12:35:10.569 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:35:10.569 +03:00 [INF] Executed action UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService) in 212.6255ms
+2024-11-27 12:35:10.569 +03:00 [INF] Executed endpoint 'UwingoIdentityService.Controllers.ApplicationController.GetAllApplications (UwingoIdentityService)'
+2024-11-27 12:35:10.570 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Application/GetAllApplications - - - 200 - application/json;+charset=utf-8 1151.1259ms
+2024-11-27 12:35:16.921 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - -
+2024-11-27 12:35:16.921 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:35:16.922 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:35:17.023 +03:00 [INF] Executed DbCommand (100ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:35:17.023 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:35:17.077 +03:00 [INF] Executed DbCommand (53ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:35:17.209 +03:00 [INF] Executed DbCommand (132ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:35:17.253 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:35:17.253 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:35:17.253 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 331.5074ms
+2024-11-27 12:35:17.253 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:35:17.253 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - - - 200 - application/json;+charset=utf-8 332.8602ms
+2024-11-27 12:35:21.027 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/eed11d51-f992-4b90-9f47-c5c3869b1504 - -
+2024-11-27 12:35:21.028 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:35:21.028 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:35:21.081 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:35:21.081 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:35:21.081 +03:00 [INF] Executing NotFoundObjectResult, writing value of type 'System.String'.
+2024-11-27 12:35:21.081 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 53.2894ms
+2024-11-27 12:35:21.082 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:35:21.082 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/eed11d51-f992-4b90-9f47-c5c3869b1504 - - - 404 - application/json;+charset=utf-8 55.0254ms
+2024-11-27 12:35:25.354 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - -
+2024-11-27 12:35:25.355 +03:00 [INF] Executing endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:35:25.355 +03:00 [INF] Route matched with {action = "GetApplicationsByCompanyId", controller = "CompanyApplication"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetApplicationsByCompanyId(System.Guid) on controller Presentation.Controllers.CompanyApplicationController (UwingoIdentityService).
+2024-11-27 12:35:25.519 +03:00 [INF] Executed DbCommand (162ms) [Parameters=[@__companyId_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0
+2024-11-27 12:35:25.520 +03:00 [ERR] Şirketin uygulamaları başarıyla getirildi.
+2024-11-27 12:35:25.647 +03:00 [INF] Executed DbCommand (126ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:35:25.702 +03:00 [INF] Executed DbCommand (55ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:35:25.746 +03:00 [INF] Executed DbCommand (42ms) [Parameters=[@__id_0='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[Name]
+FROM [Applications] AS [a]
+WHERE [a].[Id] = @__id_0
+2024-11-27 12:35:25.746 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.ApplicationDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:35:25.747 +03:00 [INF] Executed action Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService) in 391.2707ms
+2024-11-27 12:35:25.747 +03:00 [INF] Executed endpoint 'Presentation.Controllers.CompanyApplicationController.GetApplicationsByCompanyId (UwingoIdentityService)'
+2024-11-27 12:35:25.747 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/CompanyApplication/GetApplicationsByCompanyId/200c7e1e-1bb0-4d3e-9ba0-897c58a979db - - - 200 - application/json;+charset=utf-8 392.3930ms
+2024-11-27 12:35:28.197 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUsersByCompanyApplication?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9&pageNumber=1&pageSize=10 - -
+2024-11-27 12:35:28.199 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.GetUsersByCompanyApplication (UwingoIdentityService)'
+2024-11-27 12:35:28.202 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUsersByCompanyApplication?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9&pageNumber=1&pageSize=10 - -
+2024-11-27 12:35:28.203 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.GetUsersByCompanyApplication (UwingoIdentityService)'
+2024-11-27 12:35:28.205 +03:00 [INF] Route matched with {action = "GetUsersByCompanyApplication", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByCompanyApplication(System.Guid, System.Guid, Int32, Int32) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:35:28.208 +03:00 [INF] Route matched with {action = "GetUsersByCompanyApplication", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetUsersByCompanyApplication(System.Guid, System.Guid, Int32, Int32) on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-27 12:35:28.293 +03:00 [INF] Executed DbCommand (83ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:35:28.723 +03:00 [INF] Executed DbCommand (50ms) [Parameters=[@__companyId_0='?' (DbType = Guid), @__applicationId_1='?' (DbType = Guid)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+WHERE [c].[CompanyId] = @__companyId_0 AND [c].[ApplicationId] = @__applicationId_1
+2024-11-27 12:35:28.724 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.UwingoUserDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:35:28.735 +03:00 [INF] Executed action API.Controllers.AuthenticationController.GetUsersByCompanyApplication (UwingoIdentityService) in 529.7255ms
+2024-11-27 12:35:28.735 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.GetUsersByCompanyApplication (UwingoIdentityService)'
+2024-11-27 12:35:28.735 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUsersByCompanyApplication?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9&pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 537.7142ms
+2024-11-27 12:35:29.216 +03:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Entity.ModelsDto.UwingoUserDto, Entity, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-11-27 12:35:29.217 +03:00 [INF] Executed action API.Controllers.AuthenticationController.GetUsersByCompanyApplication (UwingoIdentityService) in 1008.6023ms
+2024-11-27 12:35:29.217 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.GetUsersByCompanyApplication (UwingoIdentityService)'
+2024-11-27 12:35:29.217 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/GetUsersByCompanyApplication?companyId=200c7e1e-1bb0-4d3e-9ba0-897c58a979db&applicationId=4e76cd40-234d-4a67-a104-0a58312e0ab9&pageNumber=1&pageSize=10 - - - 200 - application/json;+charset=utf-8 1014.6454ms

@@ -61,7 +61,6 @@ namespace Presentation.Controllers
             }
         }
 
-        [Authorize(Policy = "EditCompanyApplication")]
         [HttpGet("GetCompanyApplication/{id}")]
         public async Task<IActionResult> GetCompanyApplicationById(Guid id)
         {

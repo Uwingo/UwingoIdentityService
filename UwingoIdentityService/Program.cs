@@ -11,6 +11,8 @@ using UwingoIdentityService.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 builder.Services.ConfigureDbContext(builder.Configuration);
 builder.Services.ConfigureIdentity();
@@ -35,7 +37,6 @@ if (!Directory.Exists(logDirectory))
 {
     Directory.CreateDirectory(logDirectory);
 }
-
 
 // Serilog yapılandırması
 Log.Logger = new LoggerConfiguration()
@@ -62,6 +63,6 @@ app.UseAuthorization();
 
 app.MapControllers();
 
-//app.Urls.Add("http://0.0.0.0:5137");
+app.Urls.Add("http://0.0.0.0:5137");
 
 app.Run();

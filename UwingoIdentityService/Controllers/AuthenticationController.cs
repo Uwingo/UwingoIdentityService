@@ -164,8 +164,8 @@ namespace API.Controllers
         public async Task<IActionResult> GetAllUserClaims(Guid companyId, Guid applicationId)
         {
             var caUsers = await _authService.GetAllUsersByCompanyApplicationId(companyId, applicationId);
-            var caAdmin = await _authService.GetAdminId(companyId, applicationId);
-            var claim = await _authService.GetUserClaimsAsync(caAdmin.Id); //Adminin yetkileri
+            var caAdmin = await _authService.GetAdminRoleId(companyId, applicationId);
+            var claim = await _authService.GetRoleClaimsAsync(caAdmin.Id); //Adminin yetkileri
 
             //var claim = await _authService.GetUserClaimsAsync("66895f4e-3ad4-48d3-9f91-43727075edbb"); //Adminin yetkileri
             return Ok(claim);

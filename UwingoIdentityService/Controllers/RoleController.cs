@@ -58,8 +58,7 @@ namespace Presentation.Controllers
             }
         }
 
-        [Authorize(Policy = "EditRole")]
-        [HttpGet("GetRoleById/{id}")]
+            [HttpGet("GetRoleById/{id}")]
         public async Task<IActionResult> GetRoleById(string id)
         {
             try

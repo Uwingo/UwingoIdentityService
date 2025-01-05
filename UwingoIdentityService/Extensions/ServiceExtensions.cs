@@ -76,12 +76,13 @@ namespace UwingoIdentityService.Extensions
                 opts.Password.RequiredLength = 8;
                 opts.User.RequireUniqueEmail = true;
                 opts.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
+                opts.Tokens.EmailConfirmationTokenProvider = TokenOptions.DefaultEmailProvider;
             })
             .AddTokenProvider<DataProtectorTokenProvider<User>>(TokenOptions.DefaultProvider)
             .AddEntityFrameworkStores<RepositoryContext>()
             .AddDefaultTokenProviders();
 
-            // RepositoryContextAppClient için bağımsız Identity yapılandırması
+            // RepositoryContextAppClient için IdentityCore yapılandırması
             services.AddIdentityCore<UwingoUser>(opts =>
             {
                 opts.Password.RequireDigit = true;
@@ -90,12 +91,12 @@ namespace UwingoIdentityService.Extensions
                 opts.Password.RequireNonAlphanumeric = true;
                 opts.Password.RequiredLength = 8;
                 opts.User.RequireUniqueEmail = true;
-                opts.Tokens.PasswordResetTokenProvider = TokenOptions.DefaultProvider;
             })
             .AddTokenProvider<DataProtectorTokenProvider<UwingoUser>>(TokenOptions.DefaultProvider)
             .AddEntityFrameworkStores<RepositoryContextAppClient>()
             .AddDefaultTokenProviders();
         }
+
 
 
 
@@ -117,6 +118,7 @@ namespace UwingoIdentityService.Extensions
 
             services.AddScoped<IRepositoryAppClientManager, RepositoryAppClientManager>();
             services.AddScoped<IRepositoryAppClientRole, RepositoryAppClientRole>();
+            services.AddScoped<IRepositoryAppClientBase<UwingoUser>, RepositoryAppClientBase<UwingoUser>>();
             services.AddScoped<IRepositoryAppClientBase<User>, RepositoryAppClientBase<User>>();
         }
 
@@ -173,8 +175,6 @@ namespace UwingoIdentityService.Extensions
                 }
 
             );
-            var asd = data;
-
         }
 
         public static void ConfigureAuthorizationPolicies(this IServiceCollection services)

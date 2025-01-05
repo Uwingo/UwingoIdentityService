@@ -11,6 +11,6 @@ namespace Repositories.Contracts
     public interface IRepositoryCompany : IRepositoryBase<Company>
     {
         Company GetCompany(Guid id, bool trackChanges);
-        public IEnumerable<Company> GetPagedCompanies(RequestParameters parameters, bool trackChanges);
+        IEnumerable<Company> GetPagedCompanies(RequestParameters parameters, bool trackChanges);
     }
 }

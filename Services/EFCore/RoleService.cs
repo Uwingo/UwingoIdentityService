@@ -40,25 +40,30 @@ namespace Services.EFCore
                 var mappedDto = _mapper.Map<Role>(roleDto);
                 mappedDto.NormalizedName = mappedDto.Name.ToUpperInvariant();
 
+
+
                 // Dinamik veritabanı kontrolü
                 CompanyApplication companyApplication = _repository.CompanyApplication.GetCompanyApplicationByApplicationAndCompanyId(roleDto.CompanyId, roleDto.ApplicationId, false);
                 string dbConnection = companyApplication.DbConnection;
-
-                var context = await ChangeDatabase(dbConnection);
-                var roleManager = CreateRoleManager(context);
-                
-                await roleManager.CreateAsync(mappedDto);
-
-                var createdDto = _mapper.Map<RoleDto>(mappedDto);
 
                 RoleDatabaseMatch roleDatabaseMatch = new RoleDatabaseMatch()
                 {
                     CompanyApplicationId = companyApplication.Id,
                     Id = Guid.NewGuid(),
-                    RoleId = createdDto.Id,
+                    RoleId = mappedDto.Id,
                 };
 
                 _repository.RoleDbMatch.GenericCreate(roleDatabaseMatch);
+                _repository.Save();
+                var context = await ChangeDatabase(dbConnection);
+                var roleManager = CreateRoleManager(context);
+
+                await roleManager.CreateAsync(mappedDto);
+
+
+                var createdDto = _mapper.Map<RoleDto>(mappedDto);
+
+               
                 _logger.LogInformation("Rol başarıyla oluşturuldu.");
                 return createdDto;
             }

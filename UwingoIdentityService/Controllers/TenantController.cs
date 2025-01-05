@@ -59,7 +59,6 @@ namespace Presentation.Controllers
             }
         }
 
-        [Authorize(Policy = "EditTenant")]
         [HttpGet("GetTenantById/{id}")]
         public async Task<IActionResult> GetTenantById(Guid id)
         {

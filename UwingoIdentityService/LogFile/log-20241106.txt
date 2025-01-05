@@ -1,0 +1,163 @@
+2024-11-06 21:12:02.221 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:12:04.658 +03:00 [INF] Executed DbCommand (197ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-06 21:12:04.892 +03:00 [INF] Executed DbCommand (165ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-06 21:12:05.387 +03:00 [INF] Executed DbCommand (407ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:12:05.552 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:12:05.714 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:12:05.876 +03:00 [INF] Executed DbCommand (161ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:12:05.986 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:12:06.168 +03:00 [INF] Now listening on: http://0.0.0.0:5137
+2024-11-06 21:12:06.170 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 21:12:06.170 +03:00 [INF] Hosting environment: Development
+2024-11-06 21:12:06.170 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-11-06 21:12:08.928 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api - -
+2024-11-06 21:12:09.046 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-11-06 21:12:09.122 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api - - - 404 0 - 196.2671ms
+2024-11-06 21:17:55.331 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:17:57.673 +03:00 [INF] Executed DbCommand (189ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-06 21:17:57.915 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-06 21:17:58.181 +03:00 [INF] Executed DbCommand (173ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:17:58.345 +03:00 [INF] Executed DbCommand (159ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:17:58.504 +03:00 [INF] Executed DbCommand (157ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:17:58.660 +03:00 [INF] Executed DbCommand (155ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:17:58.760 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:17:58.865 +03:00 [INF] Now listening on: http://0.0.0.0:5137
+2024-11-06 21:17:58.866 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 21:17:58.867 +03:00 [INF] Hosting environment: Development
+2024-11-06 21:17:58.867 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-11-06 21:18:01.469 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api - -
+2024-11-06 21:18:01.560 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-11-06 21:18:01.634 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api - - - 404 0 - 167.1442ms
+2024-11-06 21:18:04.753 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/register - -
+2024-11-06 21:18:04.761 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/register - - - 404 0 - 7.9614ms
+2024-11-06 21:18:18.744 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/register - -
+2024-11-06 21:18:18.753 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.Register (UwingoIdentityService)'
+2024-11-06 21:18:18.769 +03:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-06 21:18:37.628 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [c].[Id], [c].[ApplicationId], [c].[CompanyId], [c].[DbConnection]
+FROM [CompanyApplications] AS [c]
+2024-11-06 21:27:32.516 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:27:34.957 +03:00 [INF] Executed DbCommand (194ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-06 21:27:35.189 +03:00 [INF] Executed DbCommand (162ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-06 21:27:35.461 +03:00 [INF] Executed DbCommand (176ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:27:35.630 +03:00 [INF] Executed DbCommand (165ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:27:36.176 +03:00 [INF] Executed DbCommand (544ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:27:37.469 +03:00 [INF] Executed DbCommand (1,292ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:27:37.560 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:27:37.659 +03:00 [INF] Now listening on: http://0.0.0.0:5137
+2024-11-06 21:27:37.660 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 21:27:37.660 +03:00 [INF] Hosting environment: Development
+2024-11-06 21:27:37.660 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-11-06 21:27:39.623 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api - -
+2024-11-06 21:27:39.707 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-11-06 21:27:39.778 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api - - - 404 0 - 156.9326ms
+2024-11-06 21:27:47.772 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/register - -
+2024-11-06 21:27:47.782 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.Register (UwingoIdentityService)'
+2024-11-06 21:27:47.799 +03:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-06 21:30:07.636 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:30:11.085 +03:00 [INF] Executed DbCommand (188ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+2024-11-06 21:30:11.359 +03:00 [INF] Executed DbCommand (197ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+2024-11-06 21:30:11.631 +03:00 [INF] Executed DbCommand (179ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:30:11.959 +03:00 [INF] Executed DbCommand (323ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:30:12.121 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:30:12.282 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a].[ClaimType], [a].[ClaimValue]
+FROM [AspNetRoleClaims] AS [a]
+WHERE [a].[RoleId] = @__role_Id_0
+2024-11-06 21:30:12.371 +03:00 [INF] User profile is available. Using 'C:\Users\kadir\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-11-06 21:30:12.469 +03:00 [INF] Now listening on: http://0.0.0.0:5137
+2024-11-06 21:30:12.471 +03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-11-06 21:30:12.471 +03:00 [INF] Hosting environment: Development
+2024-11-06 21:30:12.471 +03:00 [INF] Content root path: C:\Users\kadir\source\repos\UwingoIdentityService\UwingoIdentityService
+2024-11-06 21:30:14.607 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api - -
+2024-11-06 21:30:14.688 +03:00 [WRN] Failed to determine the https port for redirect.
+2024-11-06 21:30:14.757 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api - - - 404 0 - 152.4631ms
+2024-11-06 21:30:20.368 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/api/Authentication/register - -
+2024-11-06 21:30:20.378 +03:00 [INF] Executing endpoint 'API.Controllers.AuthenticationController.Register (UwingoIdentityService)'
+2024-11-06 21:30:20.392 +03:00 [INF] Route matched with {action = "Register", controller = "Authentication"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Register() on controller API.Controllers.AuthenticationController (UwingoIdentityService).
+2024-11-06 21:30:25.939 +03:00 [INF] Executed DbCommand (137ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[ConcurrencyStamp], [a].[Description], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+WHERE [a].[Id] = @__roleId_0
+2024-11-06 21:30:29.996 +03:00 [INF] Executed DbCommand (158ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+2024-11-06 21:30:30.167 +03:00 [INF] Executed DbCommand (160ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[CompanyApplicationId], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[RefreshToken], [a].[RefreshTokenExpiryTime], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2024-11-06 21:30:30.480 +03:00 [INF] Executed DbCommand (162ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (DbType = Guid), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?' (DbType = Boolean), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?' (DbType = Boolean), @p9='?' (DbType = DateTimeOffset), @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 4000), @p16='?' (DbType = DateTime2), @p17='?' (Size = 4000), @p18='?' (DbType = Boolean), @p19='?' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SET IMPLICIT_TRANSACTIONS OFF;
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [CompanyApplicationId], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [RefreshToken], [RefreshTokenExpiryTime], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18, @p19);
+2024-11-06 21:30:39.980 +03:00 [ERR] Kullanıcı kaydedilirken bir hata oluştu: Object reference not set to an instance of an object.
+2024-11-06 21:30:41.729 +03:00 [ERR] Kullanıcı kaydedilirken bir hata oluştu: Object reference not set to an instance of an object.
+2024-11-06 21:30:41.738 +03:00 [INF] Executing ObjectResult, writing value of type 'System.String'.
+2024-11-06 21:30:41.750 +03:00 [INF] Executed action API.Controllers.AuthenticationController.Register (UwingoIdentityService) in 21353.2201ms
+2024-11-06 21:30:41.750 +03:00 [INF] Executed endpoint 'API.Controllers.AuthenticationController.Register (UwingoIdentityService)'
+2024-11-06 21:30:41.756 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/api/Authentication/register - - - 500 - text/plain;+charset=utf-8 21387.5029ms
+2024-11-06 21:30:41.791 +03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5137/favicon.ico - -
+2024-11-06 21:30:41.793 +03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5137/favicon.ico - - - 404 0 - 2.0669ms

@@ -54,48 +54,83 @@ namespace Services.EFCore
                 var user = _mapper.Map<User>(userRegistrationDto);
                 user.RefreshToken = GenerateRefreshToken();
                 user.RefreshTokenExpiryTime = DateTime.Now.AddDays(7);
+                Role role = new Role();
 
                 IdentityResult result;
 
                 var connectionString = _repo.CompanyApplication.GenericRead(false).Where(ca => ca.Id == userRegistrationDto.CompanyApplicationId).FirstOrDefault().DbConnection;
-                var newContext = await ChangeDatabase(connectionString);
-
-                var userManagerAppClient = CreateUserManager(newContext);
-                var roleManager = CreateRoleManager(newContext);
-
-                var role = await roleManager.FindByIdAsync(userRegistrationDto.RoleId);
-
-                UwingoUser user2 = new UwingoUser();
-                user2.Email = user.Email;
-                user2.PhoneNumber = user.PhoneNumber;
-                user2.FirstName = user.FirstName;
-                user2.LastName = user.LastName;
-                user2.UserName = user.UserName;
-
-                result = await userManagerAppClient.CreateAsync(user2, userRegistrationDto.Password);
-                if (result.Succeeded)
-
+                if (connectionString.Contains("IdentityMain"))
                 {
-                    List<string> roles = new List<string>();
-                    roles.Add(role.Name);
+                    result = await _userManager.CreateAsync(user, userRegistrationDto.Password);
+                    role = await _roleManager.FindByIdAsync(userRegistrationDto.RoleId);
 
-                    var result3 = await userManagerAppClient.AddToRoleAsync(user2, role.Name);
-                    UserDatabaseMatch userDbMatch = new UserDatabaseMatch
+                    if (result.Succeeded)
+
                     {
-                        CompanyApplicationId = userRegistrationDto.CompanyApplicationId,
-                        UserId = user2.Id,
-                        UserName = user2.UserName,
-                        Email = user2.Email,
-                        Id = Guid.NewGuid()
-                    };
-                    _repo.UserDbMatch.GenericCreate(userDbMatch);
-                    _repo.Save();
-                    _logger.LogInformation("Kullanıcı başarıyla kaydedildi ve role atandı.");
+                        List<string> roles = new List<string>();
+                        roles.Add(role.Name);
+
+                        var result3 = await _userManager.AddToRoleAsync(user, role.Name);
+                        UserDatabaseMatch userDbMatch = new UserDatabaseMatch
+                        {
+                            CompanyApplicationId = userRegistrationDto.CompanyApplicationId,
+                            UserId = user.Id,
+                            UserName = user.UserName,
+                            Email = user.Email,
+                            Id = Guid.NewGuid()
+                        };
+                        _repo.UserDbMatch.GenericCreate(userDbMatch);
+                        _repo.Save();
+                        _logger.LogInformation("Kullanıcı başarıyla kaydedildi ve role atandı.");
+                    }
+                    else
+                    {
+                        _logger.LogError("Kullanıcı kaydı başarısız.");
+                    }
                 }
                 else
                 {
-                    _logger.LogError("Kullanıcı kaydı başarısız.");
+                    var newContext = await ChangeDatabase(connectionString);
+
+                    var userManagerAppClient = CreateUserManager(newContext);
+                    var roleManager = CreateRoleManager(newContext);
+
+                    role = await roleManager.FindByIdAsync(userRegistrationDto.RoleId);
+
+                    UwingoUser user2 = new UwingoUser();
+                    user2.Email = user.Email;
+                    user2.PhoneNumber = user.PhoneNumber;
+                    user2.FirstName = user.FirstName;
+                    user2.LastName = user.LastName;
+                    user2.UserName = user.UserName;
+
+                    result = await userManagerAppClient.CreateAsync(user2, userRegistrationDto.Password);
+
+                    if (result.Succeeded)
+
+                    {
+                        List<string> roles = new List<string>();
+                        roles.Add(role.Name);
+
+                        var result3 = await userManagerAppClient.AddToRoleAsync(user2, role.Name);
+                        UserDatabaseMatch userDbMatch = new UserDatabaseMatch
+                        {
+                            CompanyApplicationId = userRegistrationDto.CompanyApplicationId,
+                            UserId = user2.Id,
+                            UserName = user2.UserName,
+                            Email = user2.Email,
+                            Id = Guid.NewGuid()
+                        };
+                        _repo.UserDbMatch.GenericCreate(userDbMatch);
+                        _repo.Save();
+                        _logger.LogInformation("Kullanıcı başarıyla kaydedildi ve role atandı.");
+                    }
+                    else
+                    {
+                        _logger.LogError("Kullanıcı kaydı başarısız.");
+                    }
                 }
+                
 
                 return result;
             }
@@ -344,7 +379,7 @@ namespace Services.EFCore
                 if (user != null)
                 {
                     var roles = await userManager.GetRolesAsync(user);
-                    userDto.IsAdmin = roles.Contains("Admin");
+                    userDto.IsAdmin = roles.Contains("MasterAdmin");
                 }
             }
 
@@ -353,14 +388,22 @@ namespace Services.EFCore
 
         public async Task<List<RoleDto>> GetRolesByCompanyApplication(Guid companyId, Guid applicationId)
         {
-            var dbString = _repo.CompanyApplication.GetCompanyApplicationByApplicationAndCompanyId(companyId, applicationId, false).DbConnection;
-            var context = await ChangeDatabase(dbString);
-            var roleManager = CreateRoleManager(context);
+            try
+            {
+                var dbString = _repo.CompanyApplication.GetCompanyApplicationByApplicationAndCompanyId(companyId, applicationId, false).DbConnection;
+                var context = await ChangeDatabase(dbString);
+                var roleManager = CreateRoleManager(context);
 
-            var roles = roleManager.Roles.ToList();
-            var roleList = _mapper.Map<List<RoleDto>>(roles);
+                var roles = roleManager.Roles.ToList();
+                var roleList = _mapper.Map<List<RoleDto>>(roles);
 
-            return roleList;
+                return roleList;
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
         }
 
         private SigningCredentials GetSigninCredentials()
@@ -571,15 +614,6 @@ namespace Services.EFCore
             }
         }
 
-        //public async Task<bool> DeleteUser(string userId)
-        //{
-        //    var user = await _repo.User.GenericReadExpression(u => u.Id == userId, false).FirstOrDefaultAsync();
-        //    if (user is null) return false;
-        //    _repo.User.GenericDelete(user);
-        //    _repo.Save();
-        //    return true;
-        //}
-
         public async Task<bool> DeleteUser(string userId)
         {
             // Öncelikle birinci veritabanında kullanıcıyı kontrol et
@@ -715,13 +749,6 @@ namespace Services.EFCore
             return userClaims;
         }
 
-        //public async Task<IEnumerable<Claim>> GetRoleClaimsAsync(string roleId)
-        //{
-        //    var role = await _roleManager.FindByIdAsync(roleId); //1.veritabanına gittiği için null geliyo.
-        //    if (role == null) return null;
-
-        //    return await _roleManager.GetClaimsAsync(role);
-        //}
         public async Task<IEnumerable<Claim>> GetRoleClaimsAsync(string roleId)
         {
             // İlk olarak birinci veritabanında rolü kontrol et
@@ -820,7 +847,7 @@ namespace Services.EFCore
             var context = await ChangeDatabase(dbString);
             var userManager = CreateUserManager(context);
 
-            var users = await userManager.GetUsersInRoleAsync("Admin");
+            var users = await userManager.GetUsersInRoleAsync("MasterAdmin");
             var admin = users.FirstOrDefault();
 
             return admin;
@@ -832,7 +859,7 @@ namespace Services.EFCore
             var context = await ChangeDatabase(dbString);
             var roleManager = CreateRoleManager(context);
 
-            var roles = await roleManager.FindByNameAsync("Admin");
+            var roles = await roleManager.FindByNameAsync("MasterAdmin");
 
             return roles;
         }
@@ -909,7 +936,7 @@ namespace Services.EFCore
                     .ToList();
 
                 var claimsToAdd = newClaims
-                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == nc.Value))
+                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == ec.Value))
                     .ToList();
 
                 // Remove old claims
@@ -938,7 +965,7 @@ namespace Services.EFCore
                     .ToList();
 
                 var claimsToAdd = newClaims
-                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == nc.Value))
+                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == ec.Value))
                     .ToList();
 
                 // Remove old claims
@@ -987,7 +1014,7 @@ namespace Services.EFCore
                     .ToList();
 
                 var claimsToAdd = newClaims
-                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == nc.Value))
+                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == ec.Value))
                     .ToList();
 
                 // Remove old claims
@@ -1016,7 +1043,7 @@ namespace Services.EFCore
                     .ToList();
 
                 var claimsToAdd = newClaims
-                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == nc.Value))
+                    .Where(nc => !existingClaims.Any(ec => ec.Type == nc.Type && nc.Value == ec.Value))
                     .ToList();
 
                 // Remove old claims
