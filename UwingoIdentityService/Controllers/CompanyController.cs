@@ -135,7 +135,7 @@ namespace Presentation.Controllers
         }
 
         [Authorize(Policy = "EditCompany")]
-        [HttpPut("UpdateCompany/{id}")]
+        [HttpPut("UpdateCompany")]
         public async Task<IActionResult> UpdateCompany([FromBody] CompanyDto company)
         {
             try

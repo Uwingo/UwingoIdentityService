@@ -598,12 +598,24 @@ namespace Services.EFCore
                     _mapper.Map(userDto, existingUwingoUser);
                     context.Users.Update(existingUwingoUser);
                     await context.SaveChangesAsync();
+
+                    var userDbMatch = _repo.UserDbMatch.GenericReadExpression(udb => udb.UserName.Equals(userDto.UserName), false).FirstOrDefault();
+                    userDbMatch.UserName = userDto.UserName;
+                    userDbMatch.Email = userDto.Email;
+                    _repo.UserDbMatch.GenericUpdate(userDbMatch);
+                    _repo.Save();
                     return IdentityResult.Success;
                 }
 
                 // DTO'yu mevcut kullanıcıya map ediyoruz
                 _mapper.Map(userDto, existingUser);
                 _repo.User.GenericUpdate(existingUser);
+                _repo.Save();
+
+                var userDbMatch2 = _repo.UserDbMatch.GetUserDbMatch(userDto.Id, false);
+                userDbMatch2.UserName = userDto.UserName;
+                userDbMatch2.Email = userDto.Email;
+                _repo.UserDbMatch.GenericUpdate(userDbMatch2);
                 _repo.Save();
                 return IdentityResult.Success;
             }
@@ -859,7 +871,7 @@ namespace Services.EFCore
             var context = await ChangeDatabase(dbString);
             var roleManager = CreateRoleManager(context);
 
-            var roles = await roleManager.FindByNameAsync("MasterAdmin");
+            var roles = roleManager.Roles.Where(r => r.Name.Contains("MasterAdmin")).FirstOrDefault();
 
             return roles;
         }
@@ -1063,61 +1075,6 @@ namespace Services.EFCore
             }
             return IdentityResult.Success;
         }
-
-
-        //public async Task<bool> ForgotPasswordAsync(string email)
-        //{
-        //    Guid companyApplicationId = _repo.UserDbMatch.GetUsersCAIdByEmail(email, false);
-
-        //    var user = await _userManager.FindByEmailAsync(email);
-        //    if (user == null)
-        //    {
-        //        _logger.LogWarning("Kullanıcı bulunamadı.");
-        //        return false;
-        //    }
-
-        //    var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-        //    var encodedToken = Convert.ToBase64String(Encoding.UTF8.GetBytes(token));
-        //    var resetUrl = $"https://78.111.111.81:5080/Authentication/ResetPassword?token={encodedToken}&email={user.Email}";
-
-        //    var subject = "Şifre Sıfırlama Talebi";
-        //    var message = $"Lütfen <a href='{resetUrl}'>buraya tıklayarak</a> şifrenizi sıfırlayın.";
-
-        //    await _emailService.SendEmailAsync(user.Email, subject, message);
-
-        //    return true;
-        //}
-
-        //public async Task<IdentityResult> ResetPasswordAsync(ResetPasswordDto resetPasswordDto)
-        //{
-        //    var user = await _userManager.FindByEmailAsync(resetPasswordDto.Email);
-        //    if (user == null)
-        //    {
-        //        _logger.LogWarning("Kullanıcı bulunamadı.");
-        //        return IdentityResult.Failed(new IdentityError { Description = "Kullanıcı bulunamadı." });
-        //    }
-
-        //    var decodedToken = Encoding.UTF8.GetString(Convert.FromBase64String(resetPasswordDto.Token));
-
-        //    var resetPassResult = await _userManager.ResetPasswordAsync(user, decodedToken, resetPasswordDto.NewPassword);
-        //    if (!resetPassResult.Succeeded)
-        //    {
-        //        foreach (var error in resetPassResult.Errors)
-        //        {
-        //            _logger.LogError($"Şifre sıfırlama hatası: {error.Description}");
-        //        }
-        //        return resetPassResult;
-        //    }
-
-        //    return IdentityResult.Success;
-        //}
-
-        //public async Task<IdentityResult> ChangePassword(User user, string currentPassword, string newPassword)
-        //{
-        //    var result = await _userManager.ChangePasswordAsync(user, currentPassword, newPassword);
-        //    if (result.Succeeded) return IdentityResult.Success;
-        //    else return IdentityResult.Failed();
-        //}   
 
         public async Task<bool> ForgotPasswordAsync(string email)
         {

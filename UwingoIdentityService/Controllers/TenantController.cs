@@ -123,8 +123,8 @@ namespace Presentation.Controllers
         }
 
         [Authorize(Policy = "EditTenant")]
-        [HttpPut("UpdateTenant/{id}")]
-        public async Task<IActionResult> UpdateTenant(Guid id, [FromBody] TenantDto tenant)
+        [HttpPut("UpdateTenant")]
+        public async Task<IActionResult> UpdateTenant([FromBody] TenantDto tenant)
         {
             try
             {

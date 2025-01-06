@@ -138,8 +138,8 @@ namespace UwingoIdentityService.Controllers
         }
 
         [Authorize(Policy = "EditApplication")]
-        [HttpPut("UpdateApplication/{id}")]
-        public async Task<IActionResult> UpdateApplication(Guid id, [FromBody] ApplicationDto application)
+        [HttpPut("UpdateApplication")]
+        public async Task<IActionResult> UpdateApplication([FromBody] ApplicationDto application)
         {
             try
             {

@@ -114,8 +114,8 @@ namespace Presentation.Controllers
         }
 
         [Authorize(Policy = "EditRole")]
-        [HttpPut("UpdateRole/{id}")]
-        public async Task<IActionResult> UpdateRole(string id, [FromBody] RoleDto role)
+        [HttpPut("UpdateRole")]
+        public async Task<IActionResult> UpdateRole([FromBody] RoleDto role)
         {
             try
             {
@@ -143,7 +143,7 @@ namespace Presentation.Controllers
             try
             {
                 _roleService.DeleteRole(id);
-                var checkProcess = _roleService.GetRoleById(id);
+                var checkProcess = await _roleService.GetRoleById(id);
                 if (checkProcess is null)
                 {
                     _logger.LogInformation("Rol başarıyla silindi.");
